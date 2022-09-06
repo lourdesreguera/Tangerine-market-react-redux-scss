@@ -1,0 +1,56 @@
+@import '_fonts';
+@import '_links';
+@import '_btn';
+@import '_icons';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 10px 10px;
+    position: fixed;
+    top: 0;
+    &--desk {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1200px;
+    }
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    &--icons {
+        margin: 0 20px;
+        img {
+            margin: 0 5px;
+        }
+    }
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    &-container {
+        width: 130px;
+        padding: 40px 0;
+        text-align: center;
+    }
+}
+
+.header__logo {
+    width: 200px;
+    &--desk {
+        width: 250px;
+    }
+}
+
+.mobile-login-btn {
+    font-family: var(--heading-mobile-font);
+    font-size: 10px;
+    color: var(--purple);
+    background-color: transparent;
+    border: none;
+    margin-right: 10px;
+}

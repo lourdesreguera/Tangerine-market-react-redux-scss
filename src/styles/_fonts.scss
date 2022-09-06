@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Lemon Milk Regular';
+    src: url('../assets/LEMONMILK-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Lemon Milk Medium';
+    src: url('../assets/LEMONMILK-Medium.otf');
+}
+
+@font-face {
+    font-family: 'Lemon Milk Light';
+    src: url('../assets/LEMONMILK-Light.otf');
+}
+
+@font-face {
+    font-family: 'Poppins Medium';
+    src: url('../assets/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url('../assets/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Light';
+    src: url('../assets/Poppins-Light.ttf');
+}
+
+:root {
+    --heading-desk-font: 'Lemon Milk Medium';
+    --heading-mobile-font: 'Lemon Milk Regular';
+    --nav-desk-font: 'Lemon Milk Light';
+    --cta-desk-font: 'Lemon Milk Medium';
+    --footer-font: 'Lemon Milk Regular';
+    --footer-a-desk-font: 'Poppins Light';
+
+}

@@ -5,8 +5,8 @@ import HeaderMobile from './components/HeaderMobile';
 function App() {
   return (
     <div className="app">
-      <HeaderMobile />
-      {/* <HeaderDesk /> */}
+      {/* <HeaderMobile /> */}
+      <HeaderDesk />
     </div>
   );
 }

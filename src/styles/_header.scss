@@ -2,20 +2,25 @@
 @import '_links';
 @import '_btn';
 @import '_icons';
+@import '_colors';
 
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &--desk {
+        max-width: 1200px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.header__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px 10px 10px;
-    position: fixed;
-    top: 0;
-    &--desk {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: 1200px;
-    }
 }
 
 .header__container {
@@ -36,6 +41,10 @@
         width: 130px;
         padding: 40px 0;
         text-align: center;
+        transition: all 0.5s ease-in-out;
+        &:hover {
+            background-color: var(--nav-desk);
+        }
     }
 }
 

@@ -4,6 +4,7 @@ import HeaderMobile from "./components/HeaderMobile";
 import MediaQuery from "react-responsive";
 import CategoryNav from "./components/CategoryNav";
 import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <MediaQuery maxWidth={600}>
         <HeaderMobile />
       </MediaQuery>
-      <RegisterPage />
+      {/* <RegisterPage /> */}
+      <LoginPage />
     </div>
   );
 }

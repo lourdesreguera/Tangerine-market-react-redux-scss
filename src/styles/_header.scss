@@ -1,0 +1,74 @@
+@import '_fonts';
+@import '_links';
+@import '_btn';
+@import '_icons';
+@import '_colors';
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &--desk {
+        max-width: 1200px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 10px 10px;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    &--icons {
+        margin: 0 20px;
+        img {
+            margin: 0 5px;
+        }
+    }
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    &-container {
+        width: 130px;
+        padding: 40px 0;
+        text-align: center;
+        transition: all 0.5s ease-in-out;
+        @media (max-width: 900px) {
+            width: 90px;
+        }
+        @media (max-width: 750px) {
+            width: 60px;
+        }
+        &:hover {
+            background-color: var(--nav-desk);
+        }
+    }
+}
+
+.header__logo {
+    width: 200px;
+    &--desk {
+        width: 250px;
+        @media (max-width: 750px) {
+            width: 200px;
+        }
+    }
+}
+
+.mobile-login-btn {
+    font-family: var(--heading-mobile-font);
+    font-size: 10px;
+    color: var(--purple);
+    background-color: transparent;
+    border: none;
+    margin-right: 10px;
+}

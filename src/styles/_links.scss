@@ -1,0 +1,15 @@
+@import '_fonts';
+@import '_colors';
+
+.header__nav-link {
+    font-family: var(--heading-desk-font);
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--black); 
+    @media (max-width: 900px) {
+        font-size: 16px;
+    }
+    @media (max-width: 750px) {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,16 @@
+@import '_colors';
+@import '_fonts';
+
+.login-btn {
+    background-color: var(--purple);
+    border: 1px solid var(--login-btn-border);
+    border-radius: 6px;
+    width: 150px;
+    font-family: var(--heading-desk-font);
+    color: var(--white);
+    padding: 8px 0;
+    cursor: pointer;
+    @media (max-width: 750px) {
+        width: 100px;
+    }
+}

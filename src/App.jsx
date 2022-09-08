@@ -1,9 +1,17 @@
-import './App.scss';
+import "./App.scss";
+import HeaderDesk from "./components/HeaderDesk";
+import HeaderMobile from "./components/HeaderMobile";
+import MediaQuery from "react-responsive";
 
 function App() {
   return (
     <div className="app">
-      funciona
+      <MediaQuery minWidth={600}>
+        <HeaderDesk />
+      </MediaQuery>
+      <MediaQuery maxWidth={600}>
+        <HeaderMobile />
+      </MediaQuery>
     </div>
   );
 }

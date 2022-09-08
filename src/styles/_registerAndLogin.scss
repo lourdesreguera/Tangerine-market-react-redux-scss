@@ -1,0 +1,59 @@
+.formPage {
+    background-image: url('../../public/images/bcg-login.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.formPage__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    width: 350px;
+    border-radius: 10px;
+    height: 400px;
+    margin: 200px 0 100px 0;
+    padding: 20px;
+    @media (max-width: 470px) {
+        width: 240px;
+    }
+}
+
+.formPage__heading {
+    font-family: var(--heading-register);
+    font-size: 32px;
+    @media (max-width: 470px) {
+       font-size: 24px;
+    }
+}
+
+.formPage__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.formPage__label {
+    width: 100%;
+}
+
+.formPage__input {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--input-border);
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    &::placeholder {
+        font-family: var(--placeholder);
+        color: var(--placeholder-text);
+        font-size: 14px;
+        @media (max-width: 470px) {
+            font-size: 12px;
+        }
+    }
+}

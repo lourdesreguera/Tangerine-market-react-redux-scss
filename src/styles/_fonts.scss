@@ -28,6 +28,11 @@
     src: url('../assets/Poppins-Light.ttf');
 }
 
+@font-face {
+    font-family: 'Gloss';
+    src: url('../assets/Gloss_And_Bloom.ttf');
+}
+
 :root {
     --heading-desk-font: 'Lemon Milk Medium';
     --heading-mobile-font: 'Lemon Milk Regular';
@@ -35,5 +40,6 @@
     --cta-desk-font: 'Lemon Milk Medium';
     --footer-font: 'Lemon Milk Regular';
     --footer-a-desk-font: 'Poppins Light';
-
+    --placeholder: 'Poppins Regular';
+    --heading-register: 'Gloss';
 }

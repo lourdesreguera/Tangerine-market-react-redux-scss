@@ -32,7 +32,7 @@ const HeaderDesk = () => {
               className="icon"
             />
           </div>
-          <button className="login-btn">sign in</button>
+          <button className="login-btn">log in</button>
         </div>
       </div>
     </header>

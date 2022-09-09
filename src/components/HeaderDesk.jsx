@@ -32,7 +32,7 @@ const HeaderDesk = () => {
         </div>
         <div className="header__container">
           <div className="header__container header__container--icons">
-            <img src="./images/person.svg" alt="My Account" className="icon" />
+            <Link to='/my-account'><img src="./images/person.svg" alt="My Account" className="icon" /></Link>
             <img
               src="./images/shopping_cart.svg"
               alt="Shopping Cart"

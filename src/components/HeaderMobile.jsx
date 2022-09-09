@@ -30,7 +30,9 @@ const HeaderMobile = () => {
               log out
             </p>
           )}
-          <img src="./images/person.svg" alt="My Account" className="icon" />
+          <Link to="/my-account">
+            <img src="./images/person.svg" alt="My Account" className="icon" />
+          </Link>
         </div>
       </div>
     </header>

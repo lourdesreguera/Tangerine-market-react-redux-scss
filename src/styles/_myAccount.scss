@@ -41,3 +41,17 @@
   list-style: none;
   padding: 0;
 }
+
+.my-account__li {
+    display: flex;
+    align-items: center;
+}
+
+.my-account__label {
+    font-size: 14px;
+    margin: 0 7px 0 0;
+}
+
+.my-account__text {
+    margin: 2px 0;
+}

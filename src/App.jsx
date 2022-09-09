@@ -5,6 +5,7 @@ import MediaQuery from "react-responsive";
 import CategoryNav from "./components/CategoryNav";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       </MediaQuery>
       {/* <RegisterPage /> */}
       <LoginPage />
+      <Footer />
     </div>
   );
 }

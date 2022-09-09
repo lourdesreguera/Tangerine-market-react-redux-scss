@@ -5,6 +5,8 @@ import MediaQuery from "react-responsive";
 import CategoryNav from "./components/CategoryNav";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
+import { Route, Routes } from "react-router-dom";
+import MyAccountPage from "./pages/MyAccountPage";
 
 function App() {
   return (
@@ -16,8 +18,11 @@ function App() {
       <MediaQuery maxWidth={600}>
         <HeaderMobile />
       </MediaQuery>
-      {/* <RegisterPage /> */}
-      <LoginPage />
+      <Routes>
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/my-account" element={<MyAccountPage />} />
+      </Routes>
     </div>
   );
 }

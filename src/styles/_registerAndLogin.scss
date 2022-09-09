@@ -13,7 +13,7 @@
   background-color: var(--white);
   width: 350px;
   border-radius: 10px;
-  height: 400px;
+  height: 450px;
   margin: 200px 0 100px 0;
   padding: 20px;
   @media (max-width: 470px) {
@@ -25,6 +25,7 @@
 .formPage__heading {
   font-family: var(--heading-register);
   font-size: 32px;
+  font-weight: 100;
   @media (max-width: 470px) {
     font-size: 24px;
   }

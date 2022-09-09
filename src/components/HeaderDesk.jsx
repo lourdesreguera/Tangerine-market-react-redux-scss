@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HeaderDesk = () => {
   return (
@@ -32,7 +33,7 @@ const HeaderDesk = () => {
               className="icon"
             />
           </div>
-          <button className="login-btn">log in</button>
+          <Link to='/login' className="login-btn">log in</Link>
         </div>
       </div>
     </header>

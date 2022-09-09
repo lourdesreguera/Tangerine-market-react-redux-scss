@@ -9,6 +9,8 @@
     font-family: var(--heading-desk-font);
     color: var(--white);
     padding: 8px 0;
+    text-decoration: none;
+    text-align: center;
     cursor: pointer;
     @media (max-width: 750px) {
         width: 100px;
@@ -17,5 +19,16 @@
         width: 100%;
         margin: 20px 0;
         height: 40px;
+    }
+    &--my-account {
+        width: 100%;
+        padding: 10px;
+        margin: 20px 0;
+        line-height: 160%;
+        @media (min-width: 600px) {
+            width: 400px;
+            height: 60px;
+            padding: 10px 100px;
+        }
     }
 }

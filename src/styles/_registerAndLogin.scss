@@ -20,6 +20,11 @@
     width: 240px;
     margin: 150px 0 100px 0;
   }
+  &--newStore {
+    background-color: var(--newStore-form);
+    margin: 10px auto 100px auto;
+    height: 500px;
+  }
 }
 
 .formPage__heading {
@@ -46,16 +51,29 @@
 
 .formPage__label {
   width: 100%;
+  margin-bottom: 15px;
+  &--file {
+    background-color: var(--white);
+    font-family: var(--placeholder);
+    font-size: 40px;
+  }
 }
 
 .formPage__input {
   width: 100%;
   border-radius: 5px;
   border: 1px solid var(--input-border);
-  margin-bottom: 15px;
   padding: 10px;
   box-sizing: border-box;
   &::placeholder {
+    font-family: var(--placeholder);
+    color: var(--placeholder-text);
+    font-size: 14px;
+    @media (max-width: 470px) {
+      font-size: 12px;
+    }
+  }
+  &--select {
     font-family: var(--placeholder);
     color: var(--placeholder-text);
     font-size: 14px;

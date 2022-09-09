@@ -1,9 +1,11 @@
 import React from "react";
 import NewStoreForm from "../components/NewStoreForm";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 const MyAccountPage = () => {
   const { user } = useSelector((state) => state.auth);
+  const [newStore, setnewStore] = useState(false);
 
   return (
     <main className="my-account">
@@ -31,10 +33,12 @@ const MyAccountPage = () => {
           </ul>
         </div>
         <div>
-          <button className="login-btn login-btn--my-account">
+          <button className="login-btn login-btn--my-account" onClick={() => {
+            setnewStore(true)
+          }}>
             ¿Tienes un comercio? Date de alta gratis
           </button>
-          <NewStoreForm />
+          { newStore && <NewStoreForm /> }
         </div>
       </div>
     </main>

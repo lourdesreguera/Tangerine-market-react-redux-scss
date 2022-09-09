@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logoutUser } from "../redux/auth/aut.actions";
 
 const HeaderDesk = () => {
+  const dispatch = useDispatch();
+
+  const { user } = useSelector((state) => state.auth);
+
   return (
     <header className="header header--desk">
       <div className="header__content">
@@ -33,7 +39,19 @@ const HeaderDesk = () => {
               className="icon"
             />
           </div>
-          <Link to='/login' className="login-btn">log in</Link>
+          {!user && (
+            <Link to="/login" className="login-btn">
+              log in
+            </Link>
+          )}
+          {user && (
+            <button
+              className="login-btn"
+              onClick={() => dispatch(logoutUser())}
+            >
+              log out
+            </button>
+          )}
         </div>
       </div>
     </header>

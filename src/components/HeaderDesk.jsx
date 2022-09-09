@@ -8,7 +8,7 @@ const HeaderDesk = () => {
           <img
             src="./images/logo1.png"
             alt="Logo de Tangerine Market"
-            className="header__logo--desk"
+            className="header__logo"
           />
           <nav className="header__nav">
             <div className="header__nav-container">

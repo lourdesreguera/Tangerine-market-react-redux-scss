@@ -21,3 +21,11 @@
         }
     }
 }
+
+.formPage__link {
+    text-decoration: none;
+    font-family: var(--register-link);
+    font-size: 14px;
+    color: var(--black);
+    padding: 0 5px;
+}

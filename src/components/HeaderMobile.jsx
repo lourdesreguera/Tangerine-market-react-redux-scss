@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HeaderMobile = () => {
   return (
@@ -10,7 +11,7 @@ const HeaderMobile = () => {
           className="header__logo"
         />
         <div className="header__container">
-          <button className="mobile-login-btn">sign in</button>
+          <Link to='/login' className="mobile-login-btn">log in</Link>
           <img src="./images/person.svg" alt="My Account" className="icon" />
         </div>
       </div>

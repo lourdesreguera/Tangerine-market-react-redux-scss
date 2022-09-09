@@ -10,7 +10,10 @@ const RegisterPage = () => {
             <input type="text" name="name" placeholder="Nombre" className="formPage__input" />
           </label>
           <label className="formPage__label">
-            <input type="text" name="surname" placeholder="Apellidos" className="formPage__input" />
+            <input type="text" name="lastName" placeholder="Apellidos" className="formPage__input" />
+          </label>
+          <label className="formPage__label">
+            <input type="text" name="phone" placeholder="Teléfono" className="formPage__input" />
           </label>
           <label className="formPage__label">
             <input type="email" name="email" placeholder="Email" className="formPage__input" />

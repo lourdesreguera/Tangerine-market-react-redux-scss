@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const StoresCategories = ({ stores }) => {
   return (
@@ -8,12 +9,12 @@ const StoresCategories = ({ stores }) => {
           return (
             <div key={store._id} className="stores__container">
               <div>
-                <img src={store.image} />
+                <img src={store.image} alt={store.name} />
               </div>
               <div>
-                <a href="#" className="stores__data stores__data--heading">
+                <Link to={`/stores/${store._id}`} className="stores__data stores__data--heading">
                   {store.name}
-                </a>
+                </Link>
                 <p className="stores__address">{store.address}</p>
                 <a
                   href="tel:{store.phone}"

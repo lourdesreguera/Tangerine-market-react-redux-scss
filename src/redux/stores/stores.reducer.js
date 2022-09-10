@@ -3,7 +3,7 @@ import * as actions from './stores.actions';
 const INITIAL_STATE = {
     stores: [],
     isLoading: false,
-    error: null
+    error: null,
 };
 
 const storesReducer = (state= INITIAL_STATE, action) => {

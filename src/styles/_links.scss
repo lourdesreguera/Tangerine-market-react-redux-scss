@@ -12,12 +12,20 @@
   @media (max-width: 750px) {
     font-size: 14px;
   }
+  &--hover-header {
+    transition: color 0.25s ease-in-out;
+    &:hover {
+      color: var(--purple);
+  }
+  }
   &--categories {
     font-family: var(--nav-desk-font);
     font-size: 12px;
     margin-right: 30px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
     &:hover {
-      text-decoration: underline;
+      color: var(--purple);
     }
   }
 }

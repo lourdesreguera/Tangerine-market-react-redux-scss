@@ -19,7 +19,7 @@ const HeaderDesk = () => {
           />
           <nav className="header__nav">
             <div className="header__nav-container">
-              <NavLink to="/stores" className="header__nav-link" activeClassName='active' >
+              <NavLink to="/stores" className="header__nav-link header__nav-link--hover-header" activeclassname='active' >
                 shop
               </NavLink>
             </div>

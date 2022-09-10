@@ -41,18 +41,13 @@
     align-items: center;
     &-container {
         width: 130px;
-        padding: 40px 0;
         text-align: center;
-        transition: all 0.5s ease-in-out;
         @media (max-width: 900px) {
             width: 90px;
         }
         @media (max-width: 750px) {
             width: 60px;
         }
-        // &:hover {
-        //     background-color: var(--nav-desk);
-        // }
     }
 }
 
@@ -72,4 +67,5 @@
 
 .active {
     background-color: var(--nav-desk);
+    padding: 40px 40px;
 }

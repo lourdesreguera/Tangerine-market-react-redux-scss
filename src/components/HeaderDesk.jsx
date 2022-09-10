@@ -19,12 +19,12 @@ const HeaderDesk = () => {
           />
           <nav className="header__nav">
             <div className="header__nav-container">
-              <NavLink to="/stores" className="header__nav-link" activeclassname='active' >
+              <NavLink to="/stores" className="header__nav-link header__nav-link--hover-header" activeclassname='active' >
                 shop
               </NavLink>
             </div>
             <div className="header__nav-container">
-              <a href="#" className="header__nav-link">
+              <a href="#" className="header__nav-link header__nav-link--hover-header" activeclassname='active' >
                 about
               </a>
             </div>

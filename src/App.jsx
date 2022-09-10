@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
 import MyAccountPage from "./pages/MyAccountPage";
 import AuthRoute from "./components/AuthRoute";
+import StoresPage from "./pages/StoresPage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           path="/my-account"
           element={<AuthRoute component={<MyAccountPage />} />}
         />
+        <Route path="/stores" element={<StoresPage />} />
       </Routes>
       <Footer />
     </div>

@@ -1,0 +1,17 @@
+.stores {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+.stores__container {
+    width: 20%;
+}
+
+.stores__address {
+    margin: 2px 0;
+}

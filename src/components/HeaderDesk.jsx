@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutUser } from "../redux/auth/aut.actions";
 
@@ -19,9 +19,9 @@ const HeaderDesk = () => {
           />
           <nav className="header__nav">
             <div className="header__nav-container">
-              <a href="#" className="header__nav-link">
+              <NavLink to="/stores" className="header__nav-link" activeClassName='active' >
                 shop
-              </a>
+              </NavLink>
             </div>
             <div className="header__nav-container">
               <a href="#" className="header__nav-link">

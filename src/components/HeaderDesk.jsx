@@ -24,6 +24,11 @@ const HeaderDesk = () => {
               </NavLink>
             </div>
             <div className="header__nav-container">
+              <NavLink to="/products" className="header__nav-link" activeClassName='active' >
+                products
+              </NavLink>
+            </div>
+            <div className="header__nav-container">
               <a href="#" className="header__nav-link">
                 about
               </a>

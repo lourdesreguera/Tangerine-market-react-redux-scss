@@ -9,7 +9,7 @@ import storesReducer from './stores/stores.reducer';
 const rootReducer = combineReducers({
   auth: authReducer,
   stores: storesReducer,
-  store: storeReducer
+  store: storeReducer,
   products: productsReducer
 });
 

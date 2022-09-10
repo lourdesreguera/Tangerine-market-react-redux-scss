@@ -11,3 +11,13 @@ export const login = async (user) => {
         return error.response.data;
     }
 }
+
+export const register = async (user) => {
+    try {
+      const res = await axios.post(`${BASE_URL}/users/register`, user, { withCredentials: true });
+      return res.data;
+    } catch(error) {
+      return error.response.data;
+    }
+  }
+  

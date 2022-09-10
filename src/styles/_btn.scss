@@ -31,4 +31,11 @@
             padding: 10px 100px;
         }
     }
+    &--products {
+        font-family: var(--heading-stores);
+        font-size: 9px;
+        text-transform: uppercase;
+        width: auto;
+        padding: 5px 10px;
+    }
 }

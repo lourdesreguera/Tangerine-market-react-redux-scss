@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logoutUser } from "../redux/auth/aut.actions";
 
 const HeaderMobile = () => {
+  const dispatch = useDispatch();
+
+  const { user } = useSelector((state) => state.auth);
+
   return (
     <header className="header">
       <div className="header__content">
@@ -11,8 +17,22 @@ const HeaderMobile = () => {
           className="header__logo"
         />
         <div className="header__container">
-          <Link to='/login' className="mobile-login-btn">log in</Link>
-          <img src="./images/person.svg" alt="My Account" className="icon" />
+          {!user && (
+            <Link to="/login" className="mobile-login-btn">
+              log in
+            </Link>
+          )}
+          {user && (
+            <p
+              className="mobile-login-btn"
+              onClick={() => dispatch(logoutUser())}
+            >
+              log out
+            </p>
+          )}
+          <Link to="/my-account">
+            <img src="./images/person.svg" alt="My Account" className="icon" />
+          </Link>
         </div>
       </div>
     </header>

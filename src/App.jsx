@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 
 import { Route, Routes } from "react-router-dom";
 import MyAccountPage from "./pages/MyAccountPage";
+import AuthRoute from "./components/AuthRoute";
 
 function App() {
   return (
@@ -24,7 +25,10 @@ function App() {
       <Routes>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/my-account" element={<MyAccountPage />} />
+        <Route
+          path="/my-account"
+          element={<AuthRoute component={<MyAccountPage />} />}
+        />
       </Routes>
       <Footer />
     </div>

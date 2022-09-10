@@ -1,31 +1,45 @@
-@import '_fonts';
-@import '_colors';
+@import "_fonts";
+@import "_colors";
 
 .header__nav-link {
-    font-family: var(--heading-desk-font);
-    text-decoration: none;
-    font-size: 18px;
-    color: var(--black); 
-    @media (max-width: 900px) {
-        font-size: 16px;
+  font-family: var(--heading-desk-font);
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--black);
+  @media (max-width: 900px) {
+    font-size: 16px;
+  }
+  @media (max-width: 750px) {
+    font-size: 14px;
+  }
+  &--categories {
+    font-family: var(--nav-desk-font);
+    font-size: 12px;
+    margin-right: 30px;
+    &:hover {
+      text-decoration: underline;
     }
-    @media (max-width: 750px) {
-        font-size: 14px;
-    }
-    &--categories{
-        font-family: var(--nav-desk-font);
-        font-size: 12px;
-        margin-right: 30px;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
+  }
 }
 
 .formPage__link {
-    text-decoration: none;
-    font-family: var(--register-link);
+  text-decoration: none;
+  font-family: var(--register-link);
+  font-size: 14px;
+  color: var(--black);
+  padding: 0 5px;
+}
+
+.stores__data {
+  text-decoration: none;
+  color: var(--black);
+  cursor: pointer;
+  margin: 0;
+  &--heading {
+    font-family: var(--heading-stores);
     font-size: 14px;
-    color: var(--black);
-    padding: 0 5px;
+  }
+  &--phone {
+    font-size: 14px;
+  }
 }

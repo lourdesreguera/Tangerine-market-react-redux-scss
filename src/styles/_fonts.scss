@@ -29,6 +29,11 @@
 }
 
 @font-face {
+    font-family: 'Poppins Semibold';
+    src: url('../assets/Poppins-SemiBold.ttf');
+}
+
+@font-face {
     font-family: 'Gloss';
     src: url('../assets/Gloss_And_Bloom.ttf');
 }
@@ -43,4 +48,5 @@
     --placeholder: 'Poppins Regular';
     --register-link: 'Poppins Medium';
     --heading-register: 'Gloss';
+    --heading-stores: 'Poppins Semibold'
 }

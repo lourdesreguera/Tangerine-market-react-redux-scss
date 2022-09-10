@@ -23,8 +23,8 @@ const StoresPage = () => {
     <>
       <CategoryNav handleCategory={handleCategory} />
       {isLoading && <h2>Cargando...</h2>}
-      {category === null && <StoresCategories stores={stores} />}
-      {filteredStores && <StoresCategories stores={filteredStores} />}
+      {!category && <StoresCategories stores={stores} />}
+      {category && <StoresCategories stores={filteredStores} />}
       {error && <h2>{error}</h2>}
     </>
   );

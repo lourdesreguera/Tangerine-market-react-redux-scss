@@ -1,11 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { getProducts } from "../redux/products/products.actions";
-
-
-
-
 
 
 const ProductsPage = () => {
@@ -17,8 +14,6 @@ const ProductsPage = () => {
     }, []);
 
     return (
-      <>
-        {/* <CategoryNav /> */}
         <div className="products">
           {isLoading && <h2>Cargando...</h2>}
           {products &&
@@ -31,6 +26,34 @@ const ProductsPage = () => {
                       src={product.photo}
                       alt={product.name}
                     />
+          <div className="products">
+            {isLoading && <h2>Cargando...</h2>}
+            {products &&
+              products.map((product) => {
+                return (
+                  <div key={product._id} className="products__container">
+                    <div>
+                      <img src={product.photo} alt={product.name}/>
+                    </div>
+                    <div>
+                      
+                        <h2>{product.name}</h2>
+                      
+                      <p className="stores__address">{product.description}</p>
+                      <div>
+                        <h4>
+                            {product.price}
+                        </h4>
+                      </div>
+                      <div>
+                        <div>
+                          <NavLink to={`/stores/${product.store}`}>                      
+                            <p>Ir a vendedor</p>
+                          </NavLink>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                   <div className="products__text">
                     <a href="#" className="stores__data stores__data--heading">

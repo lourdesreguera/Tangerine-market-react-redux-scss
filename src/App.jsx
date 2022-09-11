@@ -12,6 +12,9 @@ import StoresPage from "./pages/StoresPage";
 import StoreDetailPage from "./pages/StoreDetailPage";
 import ProductsPage from "./pages/ProductsPage";
 import AboutPage from "./pages/AboutPage";
+import ShoppingCartPage from "./pages/ShoppingCartPage";
+import FooterMobile from "./components/FooterMobile";
+
 
 function App() {
   return (
@@ -29,15 +32,23 @@ function App() {
           path="/my-account"
           element={<AuthRoute component={<MyAccountPage />} />}
         />
-
+        <Route
+          path="/shopping-cart"
+          element={<AuthRoute component={<ShoppingCartPage />} />}
+        />
         <Route path="/stores">
           <Route index element={<StoresPage />} />
           <Route path=":id" element={<StoreDetailPage />} />
         </Route>
         <Route path="/products" element={<ProductsPage />} /> 
         <Route path="/about" element={<AboutPage />} />        
-      </Routes>
-      <Footer />
+         </Routes>
+      <MediaQuery minWidth={600}>
+        <Footer />
+      </MediaQuery>
+      <MediaQuery maxWidth={600}>
+        <FooterMobile />
+      </MediaQuery>
     </div>
   );
 }

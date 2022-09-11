@@ -1,0 +1,35 @@
+.store-detail {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 100px auto 100px auto;
+}
+
+.store-detail__name {
+    text-align: center;
+}
+
+.store-detail__products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.store-detail__product {
+   width: 20%;
+   padding: 8px;
+   box-sizing: border-box;
+}
+
+.store-detail__image {
+    width: 100%;
+}
+
+.store-detail__text {
+    font-family: var(--heading-stores);
+    font-size: 14px;
+    text-transform: capitalize;
+    margin: 0;
+    &--span {
+        font-family: var(--placeholder);
+    }
+}

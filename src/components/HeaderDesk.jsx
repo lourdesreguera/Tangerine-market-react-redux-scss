@@ -37,7 +37,7 @@ const HeaderDesk = () => {
               </NavLink>
             </div>
             <div className="header__nav-container">
-              <NavLink to="/about" className="header__nav-link" activeClassName='active' >
+              <NavLink to="/about" className="header__nav-link" activeclassname='active' >
                 about
               </NavLink>
             </div>

@@ -42,9 +42,11 @@ export const checkSession = async () => {
 }
 
   
-  export const registerStore = async (user) => {
+  export const registerStore = async (store) => {
     try {
-      const res = await axios.post(`${BASE_URL}/users/create`, user, { withCredentials: true });
+      const res = await axios.post(`${BASE_URL}/stores/create`, store, { withCredentials: true });
+      console.log(res)
+      
       return res.data;
     } catch(error) {
       return error.response.data;

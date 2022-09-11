@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { registerStore } from "../redux/auth/aut.actions";
+import { registerNewStore, registerStore } from "../redux/auth/aut.actions";
 
 const INITIAL_STATE = {
-  email: "",
-  /* image: "",
-  category: "", */
+  // email: "",
+  name:'',
+  category: "", 
   address: "",
   phone: "",
   cif: "",
   web: "",
-  products: [],
+  photo: "",
+
+  // products: [],
 };
 
 const NewStoreForm = () => {
@@ -23,7 +25,7 @@ const NewStoreForm = () => {
 
   const submit = (ev) => {
     ev.preventDefault();
-    dispatch(registerStore(form, navigate))
+    dispatch(registerNewStore(form, navigate))
   };
 
   const changeInput = (ev) => {
@@ -41,7 +43,7 @@ const NewStoreForm = () => {
   return (
     <div className="formPage__container formPage__container--newStore">
       <h1 className="my-account__subheading">Añade tu comercio</h1>
-      <form onSubmit={submit}className="formPage__form">
+      <form onSubmit={submit} className="formPage__form">
         <label className="formPage__label">
           <input
             type="text"

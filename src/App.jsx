@@ -11,6 +11,7 @@ import AuthRoute from "./components/AuthRoute";
 import StoresPage from "./pages/StoresPage";
 import StoreDetailPage from "./pages/StoreDetailPage";
 import ProductsPage from "./pages/ProductsPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
@@ -33,7 +34,8 @@ function App() {
           <Route index element={<StoresPage />} />
           <Route path=":id" element={<StoreDetailPage />} />
         </Route>
-        <Route path="/products" element={<ProductsPage />} />        
+        <Route path="/products" element={<ProductsPage />} /> 
+        <Route path="/about" element={<AboutPage />} />        
       </Routes>
       <Footer />
     </div>

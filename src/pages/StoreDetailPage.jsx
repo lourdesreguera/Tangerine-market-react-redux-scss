@@ -7,38 +7,37 @@ import { getStore } from "../redux/store/store.actions";
 const StoreDetailPage = () => {
   const { store } = useSelector((state) => state.store);
   const dispatch = useDispatch();
-  let { id } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     dispatch(getStore(id));
-    id = '';
-    console.log(id)
   }, []);
 
   return (
-    <div>
-    {/* { store.map(product => {
-        return (<h1>{product.name}</h1>)
-    })} */}
+    <div className="store-detail">
       {store && (
-        <div>
-          <h1>{store.name}</h1>
+        <>
+          <h1 className="store-detail__name">{store.name}</h1>
           <div>
-            <p>{store.address}</p>
-            <p>{store.phone}</p>
+            <p className="store-detail__text">Dirección: <span className="store-detail__text store-detail__text--span">{store.address}</span></p>
+            <p className="store-detail__text">Teléfono: <a className="stores__data stores__data--phone store-detail__text--span" href={"tel:{store.phone}"}>{store.phone}</a></p>
           </div>
-          {/* <div>
+          <div>
+            <h2>Productos:</h2>
+            <div className="store-detail__products">
             {store.products.map((product) => {
               return (
-                <div key={product._id}>
-                  <img src={product.photo} alt={product.name} />
-                  <h3>{product.name}</h3>
-                  <p>{product.price}</p>
+                <div key={product._id} className="store-detail__product">
+                  <img src={product.photo} alt={product.name} className="store-detail__image" />
+                  <h3 className="store-detail__text">{product.name}</h3>
+                  <p className="stores__address">{product.price}€</p>
+                  <button className="login-btn login-btn--products">Añadir al carrito</button>
                 </div>
               );
             })}
-          </div> */}
-        </div>
+            </div>
+          </div>
+        </>
       )}
     </div>
   );

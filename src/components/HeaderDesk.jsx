@@ -19,12 +19,20 @@ const HeaderDesk = () => {
           />
           <nav className="header__nav">
             <div className="header__nav-container">
-              <NavLink to="/stores" className="header__nav-link header__nav-link--hover-header" activeclassname='active' >
+              <NavLink
+                to="/stores"
+                className="header__nav-link header__nav-link--hover-header"
+                activeclassname="active"
+              >
                 shop
               </NavLink>
             </div>
             <div className="header__nav-container">
-              <NavLink to="/products" className="header__nav-link" activeclassname='active' >
+              <NavLink
+                to="/products"
+                className="header__nav-link"
+                activeclassname="active"
+              >
                 products
               </NavLink>
             </div>
@@ -37,12 +45,20 @@ const HeaderDesk = () => {
         </div>
         <div className="header__container">
           <div className="header__container header__container--icons">
-            <Link to='/my-account'><img src="./images/person.svg" alt="My Account" className="icon" /></Link>
-            <img
-              src="./images/shopping_cart.svg"
-              alt="Shopping Cart"
-              className="icon"
-            />
+            <Link to="/my-account">
+              <img
+                src="./images/person.svg"
+                alt="My Account"
+                className="icon"
+              />
+            </Link>
+            <Link to="/shopping-cart">
+              <img
+                src="./images/shopping_cart.svg"
+                alt="Shopping Cart"
+                className="icon"
+              />
+            </Link>
           </div>
           {!user && (
             <Link to="/login" className="login-btn">

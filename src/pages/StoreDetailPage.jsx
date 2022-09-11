@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getStore } from "../redux/store/store.actions";
+import { addShoppingCart } from "../redux/shopping-cart/shopping-cart.actions";
+
 
 const StoreDetailPage = () => {
   const { store } = useSelector((state) => state.store);
@@ -12,6 +14,7 @@ const StoreDetailPage = () => {
   useEffect(() => {
     dispatch(getStore(id));
   }, []);
+
 
   return (
     <div className="store-detail">
@@ -31,7 +34,7 @@ const StoreDetailPage = () => {
                   <img src={product.photo} alt={product.name} className="store-detail__image" />
                   <h3 className="store-detail__text">{product.name}</h3>
                   <p className="stores__address">{product.price}€</p>
-                  <button className="login-btn login-btn--products">Añadir al carrito</button>
+                  <button className="login-btn login-btn--products" onClick={() => dispatch(addShoppingCart(product))}>Añadir al carrito</button>
                 </div>
               );
             })}

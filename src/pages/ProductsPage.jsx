@@ -26,14 +26,14 @@ const ProductsPage = () => {
                       <img width="300px" src={product.photo} alt={product.name}/>
                     </div>
                     <div>
-                      <a href="#" className="stores__data stores__data--heading">
+                      {/* <a href="#" className="stores__data stores__data--heading"> */}
                         {product.name}
-                      </a>
+                      {/* </a> */}
                       <p className="stores__address">{product.description}</p>
                       <div>
-                        <p>
+                        <h4>
                             {product.price}
-                        </p>
+                        </h4>
                       </div>
                       <div>
                       <div>

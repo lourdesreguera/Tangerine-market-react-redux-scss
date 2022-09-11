@@ -12,6 +12,7 @@ import StoresPage from "./pages/StoresPage";
 import StoreDetailPage from "./pages/StoreDetailPage";
 import ProductsPage from "./pages/ProductsPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
+import FooterMobile from "./components/FooterMobile";
 
 function App() {
   return (
@@ -39,7 +40,12 @@ function App() {
         </Route>
         <Route path="/products" element={<ProductsPage />} />
       </Routes>
-      <Footer />
+      <MediaQuery minWidth={600}>
+        <Footer />
+      </MediaQuery>
+      <MediaQuery maxWidth={600}>
+        <FooterMobile />
+      </MediaQuery>
     </div>
   );
 }

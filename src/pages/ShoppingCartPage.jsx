@@ -11,9 +11,7 @@ const ShoppingCartPage = () => {
   const { shoppingCart, numberProducts } = useSelector(
     (state) => state.shoppingCart
   );
-  const { user } = useSelector(
-    (state) => state.auth
-  );
+  const { user } = useSelector((state) => state.auth);
 
   let listCart = [];
   let totalPrice = 0;
@@ -28,16 +26,33 @@ const ShoppingCartPage = () => {
       <h1>Este es tu carrito, {user.name}:</h1>
       {shoppingCart.map((product, key) => {
         return (
-          <div key={key}>
-            <p>{product.name}</p>
-            <p>Precio: {product.price}€</p>
-            <button onClick={() => dispatch(increaseQuantity(key))}>+1</button>
-            <p>Cantidad: {product.quantity}</p>
-            <button onClick={() => dispatch(decreaseQuantity(key))}>-1</button>
-            <button onClick={() => dispatch(deleteProduct(key))}>
-              Eliminar
-            </button>
-            <h3>Precio total: {product.price * product.quantity}€</h3>
+          <div key={key} className="shopping-cart__container">
+            <div className="shopping-cart__container shopping-cart__container--item shopping-cart__container--image">
+              <img
+                src={product.photo}
+                alt={product.name}
+                className="shopping-cart__image"
+              />
+            </div>
+            <p className="shopping-cart__container shopping-cart__container--item">
+              {product.name}
+            </p>
+            <div className="shopping-cart__container shopping-cart__container--item">
+              <p>Cantidad: {product.quantity}</p>
+              <div>
+                <button onClick={() => dispatch(increaseQuantity(key))}>
+                  +
+                </button>
+                <button onClick={() => dispatch(decreaseQuantity(key))}>
+                  -
+                </button>
+              </div>
+            </div>
+            <div className="shopping-cart__container shopping-cart__container--item">
+              <p>Precio unidad: {product.price}€</p>
+              <h3>Precio total: {product.price * product.quantity}€</h3>
+            </div>
+            <button onClick={() => dispatch(deleteProduct(key))}>X</button>
           </div>
         );
       })}

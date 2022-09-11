@@ -31,5 +31,22 @@ export const register = async (user) => {
       return error.response.data;
     }
   }
-  
 
+export const checkSession = async () => {
+  try {
+    const res = await axios.get(`${BASE_URL}/users/check-session`, { withCredentials: true });
+    return res.data;
+  } catch(error) {
+    console.log('error', error);
+  }
+}
+
+  
+  export const registerStore = async (user) => {
+    try {
+      const res = await axios.post(`${BASE_URL}/users/create`, user, { withCredentials: true });
+      return res.data;
+    } catch(error) {
+      return error.response.data;
+    }
+  }

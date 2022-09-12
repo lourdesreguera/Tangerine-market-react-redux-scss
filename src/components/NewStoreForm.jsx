@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { registerNewStore, registerStore } from "../redux/auth/aut.actions";
 
 const INITIAL_STATE = {
-  // email: "",
   name: "",
   category: "",
   address: "",
@@ -12,8 +11,6 @@ const INITIAL_STATE = {
   cif: "",
   web: "",
   photo: "",
-
-  // products: [],
 };
 
 const NewStoreForm = () => {
@@ -37,6 +34,13 @@ const NewStoreForm = () => {
       [name]: value,
     });
   };
+
+  
+  
+  // var reader = new FileReader();
+  //   reader.onload = function (e) {
+  //     document.getElementById("photo_img").setAttribute("src", e.target.result);
+  //         reader.readAsDataURL(e.target.files[0]);
 
   return (
     <div className="formPage__container formPage__container--newStore">

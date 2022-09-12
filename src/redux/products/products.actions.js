@@ -34,7 +34,6 @@ export const registerNewProduct = (product, store, navigate) => async dispatch =
             await axios.put(`http://localhost:4000/stores/edit/${store}`, newStore, {withCredentials: true})
             
             const newProduct = { ...product, store: store };
-            console.log(store)
             await axios.put(`http://localhost:4000/products/edit/${res._id}`, newProduct, {withCredentials: true})
 
             navigate('/my-account');

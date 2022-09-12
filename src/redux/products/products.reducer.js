@@ -28,7 +28,7 @@ const productsReducer = (state= INITIAL_STATE, action) => {
             return { ...state, products: [...state.products, payload] }
         }
         case actions.UPDATE_COMMERCE_PRODUCT: {
-            return { ...state, products: {...state.products, store: payload } }
+            return { ...state, products: [{...state.products, store: payload }] }
         }
         default:
             return state;

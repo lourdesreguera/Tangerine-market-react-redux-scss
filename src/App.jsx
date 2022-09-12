@@ -11,6 +11,7 @@ import AuthRoute from "./components/AuthRoute";
 import StoresPage from "./pages/StoresPage";
 import StoreDetailPage from "./pages/StoreDetailPage";
 import ProductsPage from "./pages/ProductsPage";
+import ConditionsPage from "./pages/ConditionsPage";
 import AboutPage from "./pages/AboutPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import FooterMobile from "./components/FooterMobile";
@@ -18,6 +19,9 @@ import OrderConfirmation from "./pages/OrderConfirmation";
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { checkUser } from "./redux/auth/aut.actions";
+import HomePage from "./pages/HomePage";
+import NavbarMobile from "./components/NavbarMobile";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +39,7 @@ function App() {
         <HeaderMobile />
       </MediaQuery>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
@@ -53,7 +58,8 @@ function App() {
           <Route index element={<StoresPage />} />
           <Route path=":id" element={<StoreDetailPage />} />
         </Route>
-        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/products" element={<ProductsPage />}
+        <Route path="/conditions" element={<ConditionsPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
       <MediaQuery minWidth={600}>
@@ -61,6 +67,7 @@ function App() {
       </MediaQuery>
       <MediaQuery maxWidth={600}>
         <FooterMobile />
+        <NavbarMobile />
       </MediaQuery>
     </div>
   );

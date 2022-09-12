@@ -14,7 +14,7 @@ import ProductsPage from "./pages/ProductsPage";
 import AboutPage from "./pages/AboutPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import FooterMobile from "./components/FooterMobile";
-
+import NavbarMobile from "./components/NavbarMobile";
 
 function App() {
   return (
@@ -40,14 +40,15 @@ function App() {
           <Route index element={<StoresPage />} />
           <Route path=":id" element={<StoreDetailPage />} />
         </Route>
-        <Route path="/products" element={<ProductsPage />} /> 
-        <Route path="/about" element={<AboutPage />} />        
-         </Routes>
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
       <MediaQuery minWidth={600}>
         <Footer />
       </MediaQuery>
       <MediaQuery maxWidth={600}>
         <FooterMobile />
+        <NavbarMobile />
       </MediaQuery>
     </div>
   );

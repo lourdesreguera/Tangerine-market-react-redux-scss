@@ -1,0 +1,19 @@
+.NavbarMobile-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__item{
+        width: 25%;
+        margin:10px;
+        
+
+    }
+}
+
+.NavbarMobile-image{
+    text-align: center;
+}
+.NavbarMobile-text{
+    text-align: center;
+    margin: 0 auto;
+}

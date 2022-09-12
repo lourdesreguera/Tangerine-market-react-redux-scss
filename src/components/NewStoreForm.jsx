@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { registerNewStore, registerStore } from "../redux/auth/aut.actions";
+import { registerNewStore } from "../redux/auth/aut.actions";
 
 const INITIAL_STATE = {
   name: "",
@@ -35,8 +35,15 @@ const NewStoreForm = () => {
     });
   };
 
-  
-  
+  function changeInputFile(ev) {
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      document.getElementById("img_file").setAttribute("value", ev.target.result);
+      reader.readAsDataURL(ev.target.files[0]);
+    };
+  }
+
+
   // var reader = new FileReader();
   //   reader.onload = function (e) {
   //     document.getElementById("photo_img").setAttribute("src", e.target.result);
@@ -57,16 +64,17 @@ const NewStoreForm = () => {
             className="formPage__input"
           />
         </label>
-        {/* <label className="formPage__label formPage__label--file">
+        <label className="formPage__label formPage__label--file">
           <input
-            type="text"
+            type="file"
+            id="img_file"
             name="image"
             value={form.image}
-            onChange={changeInput}
+            onChange={changeInputFile}
             placeholder="Imagen"
             className="formPage__input"
           />
-        </label> */}
+        </label>
         <label className="formPage__label">
           <select
             name="category"
@@ -74,8 +82,11 @@ const NewStoreForm = () => {
             className="formPage__input formPage__input--select"
             value={form.category}
           >
+            <option value="categoria">Categoría</option>
             <option value="alimentacion">Alimentación</option>
-            <option value="peluqueria">Peluquería</option>
+            <option value="floristeria">Floristería</option>
+            <option value="papeleria">Papelería</option>
+            <option value="cosmetica">Cosmética</option>
           </select>
         </label>
         <label className="formPage__label">
@@ -122,27 +133,6 @@ const NewStoreForm = () => {
             className="formPage__input"
           />
         </label>
-        <label className="formPage__label">
-          <input
-            type="text"
-            name="photo"
-            value={form.photo}
-            onChange={changeInput}
-            placeholder="photo"
-            className="formPage__input"
-          />
-        </label>
-        {/* <label className="formPage__label">
-          <input
-            type="text"
-            name="products"
-            value={form.products}
-            onChange={changeInput}
-            required
-            placeholder="Productos"
-            className="formPage__input"
-          />
-        </label> */}
         <button type="submit" className="login-btn login-btn--form">
           Añadir comercio
         </button>

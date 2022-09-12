@@ -5,8 +5,8 @@ import { registerNewStore, registerStore } from "../redux/auth/aut.actions";
 
 const INITIAL_STATE = {
   // email: "",
-  name:'',
-  category: "", 
+  name: "",
+  category: "",
   address: "",
   phone: "",
   cif: "",
@@ -17,28 +17,26 @@ const INITIAL_STATE = {
 };
 
 const NewStoreForm = () => {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const {error} = useSelector(state => state.auth);
+  const { error, user } = useSelector((state) => state.auth);
   const [form, setForm] = useState(INITIAL_STATE);
 
   const submit = (ev) => {
     ev.preventDefault();
-    dispatch(registerNewStore(form, navigate))
+    dispatch(registerNewStore(form, user, navigate));
   };
 
   const changeInput = (ev) => {
     const { name, value } = ev.target;
 
-    if(value) ev.target.setCustomValidity('');
+    if (value) ev.target.setCustomValidity("");
 
     setForm({
       ...form,
       [name]: value,
     });
   };
-
 
   return (
     <div className="formPage__container formPage__container--newStore">
@@ -65,24 +63,16 @@ const NewStoreForm = () => {
             className="formPage__input"
           />
         </label> */}
-        {/* <label className="formPage__label">
+        <label className="formPage__label">
           <select
             name="category"
+            onChange={changeInput}
             className="formPage__input formPage__input--select"
+            value={form.category}
           >
             <option value="alimentacion">Alimentación</option>
+            <option value="peluqueria">Peluquería</option>
           </select>
-        </label> */}
-        <label className="formPage__label">
-          <input
-            type="text"
-            name="category"
-            value={form.category}
-            onChange={changeInput}
-            required
-            placeholder="Categoria"
-            className="formPage__input"
-          />
         </label>
         <label className="formPage__label">
           <input

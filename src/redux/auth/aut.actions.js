@@ -1,3 +1,4 @@
+import axios, { Axios } from "axios";
 import { checkSession, login, logout, register, registerStore } from "../../api/auth.api";
 
 export const LOGIN_USER_START = "LOGIN_USER_START";
@@ -20,6 +21,7 @@ export const REGISTER_COMMERCE_START = "REGISTER_COMMERCE_START"
 export const CREATE_COMMERCE_OK = "CREATE_COMMERCE_OK";
 export const REGISTER_COMMERCE_ERROR = "REGISTER_COMMERCE_ERROR"
 export const UPDATE_USER_COMMERCE = "UPDATE_USER_COMMERCE";
+
 
 
 
@@ -74,7 +76,7 @@ export const registerUser = (user, navigate) => async dispatch => {
       if (response && response._id) {
         // Se ha registrado el usuario
         dispatch({ type: REGISTER_USER_OK, payload: response });
-        navigate('/');
+        navigate('/my-account');
       } else {
         // No se ha registrado correctamente
         dispatch({ type: REGISTER_USER_ERROR, payload: response });
@@ -86,7 +88,7 @@ export const registerUser = (user, navigate) => async dispatch => {
   };
   
 
-  export const registerNewStore = (store, navigate) => async dispatch => {
+  export const registerNewStore = (store, user, navigate) => async dispatch => {
     try {
       dispatch({ type: REGISTER_COMMERCE_START });
       const response = await registerStore(store);
@@ -95,8 +97,11 @@ export const registerUser = (user, navigate) => async dispatch => {
         // Se ha registrado el usuario
         dispatch({ type: CREATE_COMMERCE_OK, payload: response });
         dispatch({ type: UPDATE_USER_COMMERCE, payload: response._id });
-
-        navigate('/');
+        const { password, ...restUser} = user;
+        const newUser = {...restUser, store: response._id}
+        const updateUser = await axios.put(`http://localhost:4000/users/edit/${user._id}`, newUser, {withCredentials: true});
+        console.log(updateUser);
+        navigate('/my-account');
       } else {
         // No se ha registrado correctamente
         dispatch({ type: REGISTER_COMMERCE_ERROR, payload: response });

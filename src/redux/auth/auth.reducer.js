@@ -58,7 +58,9 @@ const authReducer = (state = INITIAL_STATE, action) => {
       return { ...state, commerces: [...state.commerces, payload] };
     }
     case actions.UPDATE_USER_COMMERCE: {
-      return { ...state, user: { ...state.user, commerceId: payload._id } };
+      // console.log(state.user);
+      // const userStore = state.user.store;
+      return { ...state, user: { ...state.user, store: payload } };
     }
     default:
       return state;

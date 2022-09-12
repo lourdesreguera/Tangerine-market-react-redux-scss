@@ -6,6 +6,8 @@ import { useState } from "react";
 const MyAccountPage = () => {
   const { user } = useSelector((state) => state.auth);
   const [newStore, setnewStore] = useState(false);
+  const [newProduct, setNewProduct] = useState(false);
+
 
   return (
     <main className="my-account">
@@ -32,14 +34,30 @@ const MyAccountPage = () => {
             </li>
           </ul>
         </div>
-        <div>
-          <button className="login-btn login-btn--my-account" onClick={() => {
-            setnewStore(true)
-          }}>
-            ¿Tienes un comercio? Date de alta gratis
-          </button>
-          { newStore && <NewStoreForm /> }
-        </div>
+        {!user.store && (
+          <div>
+            <button
+              className="login-btn login-btn--my-account"
+              onClick={() => {
+                setnewStore(true);
+              }}
+            >
+              ¿Tienes un comercio? Date de alta gratis
+            </button>
+            {newStore && <NewStoreForm />}
+          </div>
+        )}
+        {user.store && <div>
+            <button
+              className="login-btn login-btn--my-account"
+              onClick={() => {
+                setNewProduct(true);
+              }}
+            >
+              Añade un producto a tu cuenta
+            </button>
+            {newProduct && <NewStoreForm />}
+          </div>}
       </div>
     </main>
   );

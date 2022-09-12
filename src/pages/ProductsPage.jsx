@@ -8,9 +8,11 @@ const ProductsPage = () => {
   const dispatch = useDispatch();
   const { products, isLoading, error } = useSelector((state) => state.products);
 
+
   useEffect(() => {
     dispatch(getProducts());
   }, []);
+
 
   return (
     // <>

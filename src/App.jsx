@@ -13,6 +13,13 @@ import StoreDetailPage from "./pages/StoreDetailPage";
 import ProductsPage from "./pages/ProductsPage";
 import ConditionsPage from "./pages/ConditionsPage";
 
+import AboutPage from "./pages/AboutPage";
+import ShoppingCartPage from "./pages/ShoppingCartPage";
+import FooterMobile from "./components/FooterMobile";
+import HomePage from "./pages/HomePage";
+import NavbarMobile from "./components/NavbarMobile";
+
+
 function App() {
   return (
     <div className="app">
@@ -23,21 +30,32 @@ function App() {
         <HeaderMobile />
       </MediaQuery>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
           path="/my-account"
           element={<AuthRoute component={<MyAccountPage />} />}
         />
-
+        <Route
+          path="/shopping-cart"
+          element={<AuthRoute component={<ShoppingCartPage />} />}
+        />
         <Route path="/stores">
           <Route index element={<StoresPage />} />
           <Route path=":id" element={<StoreDetailPage />} />
         </Route>
-        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/products" element={<ProductsPage />}
         <Route path="/conditions" element={<ConditionsPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
-      <Footer />
+      <MediaQuery minWidth={600}>
+        <Footer />
+      </MediaQuery>
+      <MediaQuery maxWidth={600}>
+        <FooterMobile />
+        <NavbarMobile />
+      </MediaQuery>
     </div>
   );
 }

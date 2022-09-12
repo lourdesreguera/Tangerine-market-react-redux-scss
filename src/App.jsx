@@ -14,7 +14,9 @@ import ProductsPage from "./pages/ProductsPage";
 import AboutPage from "./pages/AboutPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import FooterMobile from "./components/FooterMobile";
+import HomePage from "./pages/HomePage";
 import NavbarMobile from "./components/NavbarMobile";
+
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
         <HeaderMobile />
       </MediaQuery>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route

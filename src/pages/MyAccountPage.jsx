@@ -2,6 +2,7 @@ import React from "react";
 import NewStoreForm from "../components/NewStoreForm";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import NewProductForm from "../components/NewProductForm";
 
 const MyAccountPage = () => {
   const { user } = useSelector((state) => state.auth);
@@ -56,7 +57,7 @@ const MyAccountPage = () => {
             >
               Añade un producto a tu cuenta
             </button>
-            {newProduct && <NewStoreForm />}
+            {newProduct && <NewProductForm />}
           </div>}
       </div>
     </main>

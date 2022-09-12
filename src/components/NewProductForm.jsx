@@ -15,12 +15,12 @@ const INITIAL_STATE = {
 const NewProductForm = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { error, user } = useSelector(state => state.auth);
+    const { error } = useSelector(state => state.auth);
+    const { store } = useSelector(state => state.store)
     const [form, setForm] = useState(INITIAL_STATE);
 
     const submit = (ev) => {
         ev.preventDefault();
-        const store = user.store;
         dispatch(registerNewProduct(form, store, navigate));
     };
 

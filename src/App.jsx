@@ -14,9 +14,18 @@ import ProductsPage from "./pages/ProductsPage";
 import AboutPage from "./pages/AboutPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import FooterMobile from "./components/FooterMobile";
-
+import OrderConfirmation from "./pages/OrderConfirmation";
+import { useEffect } from "react";
+import { useDispatch } from 'react-redux';
+import { checkUser } from "./redux/auth/aut.actions";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkUser())
+  }, [dispatch]); 
+
   return (
     <div className="app">
       <MediaQuery minWidth={600}>
@@ -36,13 +45,17 @@ function App() {
           path="/shopping-cart"
           element={<AuthRoute component={<ShoppingCartPage />} />}
         />
+        <Route
+          path="/order-confirm"
+          element={<AuthRoute component={<OrderConfirmation />} />}
+        />
         <Route path="/stores">
           <Route index element={<StoresPage />} />
           <Route path=":id" element={<StoreDetailPage />} />
         </Route>
-        <Route path="/products" element={<ProductsPage />} /> 
-        <Route path="/about" element={<AboutPage />} />        
-         </Routes>
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
       <MediaQuery minWidth={600}>
         <Footer />
       </MediaQuery>

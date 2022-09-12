@@ -23,9 +23,6 @@ export const REGISTER_COMMERCE_ERROR = "REGISTER_COMMERCE_ERROR"
 export const UPDATE_USER_COMMERCE = "UPDATE_USER_COMMERCE";
 
 
-
-
-
 export const loginUser = (user, navigate) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_USER_START });

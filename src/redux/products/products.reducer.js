@@ -4,7 +4,7 @@ const INITIAL_STATE = {
     products: [],
     isLoading: false,
     error: null,
-    store: null
+    // store: null
 };
 
 const productsReducer = (state= INITIAL_STATE, action) => {
@@ -27,9 +27,9 @@ const productsReducer = (state= INITIAL_STATE, action) => {
         case actions.CREATE_PRODUCT_OK: {
             return { ...state, products: [...state.products, payload] }
         }
-        case actions.UPDATE_COMMERCE_PRODUCT: {
-            return { ...state, products: [{...state.products, store: payload }] }
-        }
+        // case actions.UPDATE_COMMERCE_PRODUCT: {
+        //     return { ...state, store: payload }
+        // }
         default:
             return state;
     }

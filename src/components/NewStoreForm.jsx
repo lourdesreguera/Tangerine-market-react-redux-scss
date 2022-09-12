@@ -21,7 +21,18 @@ const NewStoreForm = () => {
 
   const submit = (ev) => {
     ev.preventDefault();
-    dispatch(registerNewStore(form, user, navigate));
+
+    const formData = new FormData();
+    formData.append("photo", form.photo);
+    formData.append("name", form.name);
+    formData.append("address", form.address);
+    formData.append("cif", form.cif);
+    formData.append("web", form.web);
+    formData.append("category", form.category);
+    formData.append("phone", form.phone);
+
+    dispatch(registerNewStore(formData, user, navigate));
+    console.log(form);
   };
 
   const changeInput = (ev) => {
@@ -29,20 +40,22 @@ const NewStoreForm = () => {
 
     if (value) ev.target.setCustomValidity("");
 
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
-
-  function changeInputFile(ev) {
-    var reader = new FileReader();
-    reader.onload = function (ev) {
-      document.getElementById("img_file").setAttribute("value", ev.target.result);
+    if (name !== "photo") {
+      setForm({
+        ...form,
+        [name]: value,
+      });
+    } else {
+      var reader = new FileReader();
+      reader.onloadend = () => {
+        setForm({
+          ...form,
+          photo: reader.result,
+        });
+      };
       reader.readAsDataURL(ev.target.files[0]);
-    };
-  }
-
+    }
+  };
 
   // var reader = new FileReader();
   //   reader.onload = function (e) {
@@ -52,7 +65,11 @@ const NewStoreForm = () => {
   return (
     <div className="formPage__container formPage__container--newStore">
       <h1 className="my-account__subheading">Añade tu comercio</h1>
-      <form onSubmit={submit} className="formPage__form">
+      <form
+        onSubmit={submit}
+        className="formPage__form"
+        encType="multipart/form-data"
+      >
         <label className="formPage__label">
           <input
             type="text"
@@ -68,9 +85,9 @@ const NewStoreForm = () => {
           <input
             type="file"
             id="img_file"
-            name="image"
-            value={form.image}
-            onChange={changeInputFile}
+            name="photo"
+            // value={form.photo}
+            onChange={changeInput}
             placeholder="Imagen"
             className="formPage__input"
           />
@@ -86,7 +103,7 @@ const NewStoreForm = () => {
             <option value="alimentacion">Alimentación</option>
             <option value="floristeria">Floristería</option>
             <option value="papeleria">Papelería</option>
-            <option value="cosmetica">Cosmética</option>
+            <option value="belleza">Belleza</option>
           </select>
         </label>
         <label className="formPage__label">

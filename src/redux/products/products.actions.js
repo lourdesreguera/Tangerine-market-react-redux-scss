@@ -8,7 +8,7 @@ export const ERROR_PRODUCTS = 'ERROR_PRODUCTS';
 export const REGISTER_PRODUCT_START = "REGISTER_PRODUCT_START"
 export const CREATE_PRODUCT_OK = "CREATE_PRODUCT_OK";
 export const REGISTER_PRODUCT_ERROR = "REGISTER_PRODUCT_ERROR"
-export const UPDATE_COMMERCE_PRODUCT = "UPDATE_COMMERCE_PRODUCT";
+// export const UPDATE_COMMERCE_PRODUCT = "UPDATE_COMMERCE_PRODUCT";
 
 
 export const getProducts = () => async (dispatch) => {
@@ -28,10 +28,10 @@ export const registerNewProduct = (product, store, navigate) => async dispatch =
 
         if (res && res._id) {
             dispatch({ type: CREATE_PRODUCT_OK, payload: res});
-            dispatch({ type: UPDATE_COMMERCE_PRODUCT, payload: store._id });
+            // dispatch({ type: UPDATE_COMMERCE_PRODUCT, payload: store._id });
             
-            const newStore = { ...store, products: res._id };
-            await axios.put(`http://localhost:4000/stores/edit/${store}`, newStore, {withCredentials: true})
+            const newStore = { ...store, products: [...store.products, res._id] };
+            await axios.put(`http://localhost:4000/stores/edit/${store._id}`, newStore, {withCredentials: true})
             
             const newProduct = { ...product, store: store };
             await axios.put(`http://localhost:4000/products/edit/${res._id}`, newProduct, {withCredentials: true})

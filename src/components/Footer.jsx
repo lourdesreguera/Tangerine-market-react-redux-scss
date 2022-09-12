@@ -1,4 +1,9 @@
-import React from "react";
+
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+
+
 
 const Footer = () => {
   return (
@@ -22,10 +27,17 @@ const Footer = () => {
             alt="Twitter"
           />
         </div>
-      </div>
-      <div className="footer-container__item">
-        <div>
-          <h4>TANGERINE MARKET</h4>
+
+        <div className='footer-container__item'>
+            <div>
+                <h4>TANGERINE MARKET</h4>
+            </div>
+            <div className='footer-container__item-enlaces'>
+                <a href="#">Sobre Nosotros</a>
+                {/* <a href="#">Condiciones de Compra</a> */}
+                <Link to="/conditions" className="">Términos y Condiciones</Link>
+            </div>
+
         </div>
         <div className="footer-container__item-enlaces">
           <a href="#">Sobre Nosotros</a>

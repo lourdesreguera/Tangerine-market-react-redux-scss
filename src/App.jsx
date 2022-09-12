@@ -11,6 +11,8 @@ import AuthRoute from "./components/AuthRoute";
 import StoresPage from "./pages/StoresPage";
 import StoreDetailPage from "./pages/StoreDetailPage";
 import ProductsPage from "./pages/ProductsPage";
+import ConditionsPage from "./pages/ConditionsPage";
+
 import AboutPage from "./pages/AboutPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import FooterMobile from "./components/FooterMobile";
@@ -43,7 +45,8 @@ function App() {
           <Route index element={<StoresPage />} />
           <Route path=":id" element={<StoreDetailPage />} />
         </Route>
-        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/products" element={<ProductsPage />}
+        <Route path="/conditions" element={<ConditionsPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
       <MediaQuery minWidth={600}>

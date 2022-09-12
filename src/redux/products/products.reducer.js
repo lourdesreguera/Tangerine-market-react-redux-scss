@@ -3,7 +3,8 @@ import * as actions from './products.actions';
 const INITIAL_STATE = {
     products: [],
     isLoading: false,
-    error: null
+    error: null,
+    // store: null
 };
 
 const productsReducer = (state= INITIAL_STATE, action) => {
@@ -19,6 +20,16 @@ const productsReducer = (state= INITIAL_STATE, action) => {
         case actions.ERROR_PRODUCTS: {
             return { ...state, products: [], isLoading: false, error: payload }
         }
+        
+        case actions.REGISTER_PRODUCT_START: {
+            return { ...state, isLoading: true, error: null};
+        }
+        case actions.CREATE_PRODUCT_OK: {
+            return { ...state, products: [...state.products, payload] }
+        }
+        // case actions.UPDATE_COMMERCE_PRODUCT: {
+        //     return { ...state, store: payload }
+        // }
         default:
             return state;
     }

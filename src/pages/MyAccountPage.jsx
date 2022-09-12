@@ -1,11 +1,22 @@
 import React from "react";
 import NewStoreForm from "../components/NewStoreForm";
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import NewProductForm from "../components/NewProductForm";
+import { getStore } from "../redux/store/store.actions";
 
 const MyAccountPage = () => {
   const { user } = useSelector((state) => state.auth);
+  const { store } = useSelector((state) => state.store);
   const [newStore, setnewStore] = useState(false);
+  const [newProduct, setNewProduct] = useState(false);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (user.store) {
+      dispatch(getStore(user.store));
+    }
+  }, []);
 
   return (
     <main className="my-account">
@@ -31,15 +42,56 @@ const MyAccountPage = () => {
               <p className="my-account__text">{user.email}</p>
             </li>
           </ul>
+
+          {store && store.products && (
+          <div>
+            <h2>Tus productos:</h2>
+            <div>
+              {store.products.map((product) => {
+                return (
+                  <div key={product._id}>
+                    <p>Nombre:{product.name}</p>
+                    <p>Precio: {product.price}€</p>
+                    <p>Cantidad: {product.quantity}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
         </div>
-        <div>
-          <button className="login-btn login-btn--my-account" onClick={() => {
-            setnewStore(true)
-          }}>
-            ¿Tienes un comercio? Date de alta gratis
-          </button>
-          { newStore && <NewStoreForm /> }
-        </div>
+
+        {!user.store && (
+          <div>
+            <button
+              className="login-btn login-btn--my-account"
+              onClick={() => {
+                setnewStore(true);
+              }}
+            >
+              ¿Tienes un comercio? Date de alta gratis
+            </button>
+            {newStore && <NewStoreForm />}
+          </div>
+        )}
+
+        {user.store && (
+          <div>
+            <button
+              className="login-btn login-btn--my-account"
+              onClick={() => {
+                setNewProduct(true);
+              }}
+            >
+              Añade un producto a tu cuenta
+            </button>
+            {newProduct && <NewProductForm />}
+          </div>
+        )}
+
+        
+
+        
       </div>
     </main>
   );

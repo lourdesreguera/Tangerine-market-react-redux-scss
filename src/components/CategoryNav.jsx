@@ -22,6 +22,12 @@ const CategoryNav = ({handleCategory}) => {
         <p className="header__nav-link header__nav-link--categories" onClick={ showCategory }>
           Floristeria
         </p>
+        <p className="header__nav-link header__nav-link--categories" onClick={ showCategory }>
+          Papeleria
+        </p>
+        <p className="header__nav-link header__nav-link--categories" onClick={ showCategory }>
+          Belleza
+        </p>
       </div>
     </nav>
   );

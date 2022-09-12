@@ -1,7 +1,7 @@
 .shopping-cart {
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 150px auto;
     min-height: 300px;
 }
@@ -9,15 +9,26 @@
 .shopping-cart__container {
     display: flex;
     align-items: center;
+    background-color: var(--login-btn-border);
+    margin: 10px 0;
+    justify-content: space-around;
     &--item {
-        width: 20%;
+        width: 25%;
     }
     &--image {
-        max-width: 70px;
+        max-width: 100px;
+    }
+    &--price {
+        flex-direction: column;
     }
 }
 
 .shopping-cart__image {
     width: 100%;
     border-radius: 50%;
+}
+
+.shopping-cart__quantity-btns {
+    display: flex;
+    flex-direction: column;
 }

@@ -9,11 +9,9 @@ const ProductsPage = () => {
   const dispatch = useDispatch();
   const { products, isLoading, error } = useSelector((state) => state.products);
 
-
   useEffect(() => {
     dispatch(getProducts());
   }, []);
-
 
   return (
     // <>
@@ -33,17 +31,16 @@ const ProductsPage = () => {
               </div>
               <div>
                 <div className="products__text">
-                  <h2 className="stores__data stores__data--heading">
-                    {products.name}
-                  </h2>
-                  <p className="">{product.description}</p>
-                  <h3>{product.price} €</h3>
+                  <h2 className="store-detail__text">{product.name}</h2>
+                  <h3 className="product-price-color">{product.price} €</h3>
                 </div>
-                <div>
-                  <NavLink to={`/stores/${product.store}`}>
-                    <p>Ir a vendedor</p>
-                  </NavLink>
-                </div>
+
+                <NavLink
+                  to={`/stores/${product.store}`}
+                  className="stores__data stores__data--footer"
+                >
+                  <p>Ir a vendedor</p>
+                </NavLink>
               </div>
               <button className="login-btn login-btn--products" onClick={() => dispatch(addShoppingCart(product))}>Añadir al Carrito</button>
             </div>

@@ -16,3 +16,14 @@
 .products__image-img{
     width:100%;
 }
+.product-price-color{
+    color:#7C1044;
+    font-size:18px;
+    margin-block-start: 3px;
+}
+
+@media only screen and (max-width: 600px) {
+    .products{
+        width:100%;
+    }
+}

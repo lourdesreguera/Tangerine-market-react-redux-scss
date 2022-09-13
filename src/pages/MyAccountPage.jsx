@@ -58,21 +58,7 @@ const MyAccountPage = () => {
             </li>
           </ul>
 
-          {/* {contexto.shoppingCart && tiendas.includes(user._id) && (
-            <div>
-              <h1>Has vendido:</h1>
-              {contexto.shoppingCart.map((item) => {
-                return (
-                  <div>
-                    <h1>{item.name}</h1>
-                    <p>{item.quantity}</p>
-                  </div>
-                );
-              })}
-            </div>
-          )} */}
-
-          {store && store.products && (
+          {/* {store && store.products && (
             <div>
               <h2>Tus productos:</h2>
               <div>
@@ -87,7 +73,7 @@ const MyAccountPage = () => {
                 })}
               </div>
             </div>
-          )}
+          )} */}
         </div>
 
         {!user.store && (

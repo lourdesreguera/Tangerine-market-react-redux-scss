@@ -12,11 +12,13 @@ const HeaderDesk = () => {
     <header className="header header--desk">
       <div className="header__content">
         <div className="header__container">
-          <img
-            src="./images/logo1.png"
-            alt="Logo de Tangerine Market"
-            className="header__logo"
-          />
+          <Link to="/">
+            <img
+              src="./images/logo1.png"
+              alt="Logo de Tangerine Market"
+              className="header__logo"
+            />
+          </Link>
           <nav className="header__nav">
             <div className="header__nav-container">
               <NavLink
@@ -30,14 +32,18 @@ const HeaderDesk = () => {
             <div className="header__nav-container">
               <NavLink
                 to="/products"
-                className="header__nav-link"
+                className="header__nav-link header__nav-link--hover-header"
                 activeclassname="active"
               >
                 products
               </NavLink>
             </div>
             <div className="header__nav-container">
-              <NavLink to="/about" className="header__nav-link" activeclassname='active' >
+              <NavLink
+                to="/about"
+                className="header__nav-link header__nav-link--hover-header"
+                activeclassname="active"
+              >
                 about
               </NavLink>
             </div>

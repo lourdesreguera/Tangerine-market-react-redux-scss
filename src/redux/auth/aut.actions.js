@@ -1,5 +1,6 @@
 import axios, { Axios } from "axios";
 import { checkSession, login, logout, register, registerStore } from "../../api/auth.api";
+import { deleteChart } from "../shopping-cart/shopping-cart.actions";
 
 export const LOGIN_USER_START = "LOGIN_USER_START";
 export const LOGIN_USER_OK = "LOGIN_USER_OK";
@@ -46,6 +47,7 @@ export const logoutUser = () => async (dispatch) => {
       dispatch({ type: LOGOUT_ERROR, payload: error });
     } else {
       dispatch({ type: LOGOUT_OK });
+      dispatch(deleteChart);
     }
   } catch (error) {
     dispatch({ type: LOGOUT_OK, payload: error });

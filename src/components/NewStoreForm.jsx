@@ -23,6 +23,10 @@ const NewStoreForm = () => {
     dispatch(registerNewStore(formData, user, navigate));
   };
 
+  const addStore = () => {
+    alert('Producto añadido')
+  }
+
   return (
     <div className="formPage__container formPage__container--newStore">
       <h1 className="my-account__subheading">Añade tu comercio</h1>
@@ -96,7 +100,7 @@ const NewStoreForm = () => {
             className="formPage__input"
           />
         </label>
-        <button type="submit" className="login-btn login-btn--form">
+        <button type="submit" className="login-btn login-btn--form" onClick={addStore}>
           Añadir comercio
         </button>
       </form>

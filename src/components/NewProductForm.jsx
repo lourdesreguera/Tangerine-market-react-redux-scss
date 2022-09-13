@@ -22,6 +22,10 @@ const NewProductForm = () => {
     dispatch(registerNewProduct(formData, store, navigate));
   };
 
+  const addProduct = () => {
+    alert('Producto añadido')
+  }
+
   return (
     <div className="formPage__container formPage__container--newStore">
       <h1 className="my-account__subheading">Añade nuevo producto</h1>
@@ -69,7 +73,7 @@ const NewProductForm = () => {
             className="formPage__input"
           />
         </label>
-        <button type="submit" className="login-btn login-btn--form">
+        <button type="submit" className="login-btn login-btn--form" onClick={addProduct}>
           Añadir producto
         </button>
       </form>

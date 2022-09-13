@@ -12,6 +12,7 @@
 .store-detail__products {
     display: flex;
     flex-wrap: wrap;
+    margin:50px 0;
 }
 
 .store-detail__product {
@@ -26,10 +27,25 @@
 
 .store-detail__text {
     font-family: var(--heading-stores);
-    font-size: 14px;
+    font-size: 18px;
     text-transform: capitalize;
     margin: 0;
     &--span {
         font-family: var(--placeholder);
     }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .store-detail__product {
+        width: 100%;
+    }
+    .store-detail__products {
+        margin:20px;
+    }
+    .store-detail__product {
+        margin-top:30px;
+        padding: 8px;
+        
+     }
 }

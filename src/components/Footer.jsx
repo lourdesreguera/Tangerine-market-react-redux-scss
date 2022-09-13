@@ -28,18 +28,18 @@ const Footer = () => {
       <div className="footer-container__item">
         <h4>TANGERINE MARKET</h4>
         <div className="footer-container__item-enlaces">
-          <a href="#">Sobre Nosotros</a>
-          <Link to="/conditions">Términos y Condiciones</Link>
+          <Link to="/about" className="stores__data stores__data--footer">Sobre Nosotros</Link>
+          <Link to="/conditions" className="stores__data stores__data--footer">Términos y Condiciones</Link>
         </div>
       </div>
 
       <div className="footer-container__item">
-        <h4>SECCIONES DESTACADAS</h4>
+        <h4>COMERCIOS DESTACADOS</h4>
         <div className="footer-container__item-enlaces">
-          <a href="#">Alimentación</a>
-          <a href="#">Cosmética</a>
-          <a href="#">Floristeria</a>
-          <a href="#">Farmacia</a>
+        <Link to="/stores/631c54b2bd07775b6fa99483" className="stores__data stores__data--footer">Floristería Capullos Florecidos</Link>
+          <Link to="/stores/63208f2ec2f0e99b62a4fc88" className="stores__data stores__data--footer">Barbería Jonson's</Link>
+          <Link to="/stores/631f33c83685a487612e019f" className="stores__data stores__data--footer">Pescadería Paula</Link>
+          <Link to="/stores/631ee61a325a01f32a480065" className="stores__data stores__data--footer">Listo de Papeles</Link>
         </div>
       </div>
 
@@ -47,7 +47,7 @@ const Footer = () => {
         <h4>CONTACTO</h4>
 
         <p>Dirección: Calle Upgrade Hub</p>
-        <p>Teléfono: 987 654 321</p>
+        <a className="stores__data stores__data--footer" href="tel:987654321">Teléfono: 987 654 321</a>
       </div>
     </footer>
   );

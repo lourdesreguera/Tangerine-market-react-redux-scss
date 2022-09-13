@@ -1,35 +1,82 @@
+@import '_colors';
+@import '_fonts';
+
 .home-page{
     margin-top: 100px;
 }
-
-.home-page__container{
+.home-page__first-block{
     background-image: url("../../public/images/bcg-hero\ 1.jpg");
-    max-width: 1400;
-    height: 200px;
+    background-repeat: no-repeat;
+   background-size: cover;
+    height: 250px;
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
+}
+.home-page__second-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .home-page__gallery{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    width: 100%;
+    margin-bottom: 50px;
     
 }
-.gallery__item{
-    width: 300px;
-    height: 300px;
-    
-    img{
-        width: 100%;
-        
-    }
-}
-.bloque{
+.gallery__item1{
+    background-image: url(../../public/images/alimentacion.jpg);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-
+    width: 300px;
+    height: 300px;;
+}
+.gallery__item2{
+    background-image: url(../../public/images/floristerias.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;;
+}
+.gallery__item3{
+    background-image: url(../../public/images/papeleria.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;;
+}
+.gallery__item4{
+    background-image: url(../../public/images/peluqueria.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;;
+}
+.button-gallery{
+    background-color: var(--purple);
+    opacity: 0.6;
+    border: none;
+    border-radius: 6px;
+    width: 200px;
+    font-family: var(--heading-desk-font);
+    color: var(--white);
+    padding: 8px 0;
+    text-decoration: none;
+    text-align: center;
+}
+.button-homepage{
+    background-color: Transparent;
+    color: var(--white);
+    border: 1px solid var(--login-btn-border);
+    border-radius: 6px;
+    cursor: pointer;
+    
 }

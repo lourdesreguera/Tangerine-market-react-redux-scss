@@ -11,11 +11,13 @@ const HeaderMobile = () => {
   return (
     <header className="header">
       <div className="header__content">
-        <img
-          src="./images/logo1.png"
-          alt="Logo de Tangerine Market"
-          className="header__logo"
-        />
+        <Link to="/">
+          <img
+            src="./images/logo1.png"
+            alt="Logo de Tangerine Market"
+            className="header__logo"
+          />
+        </Link>
         <div className="header__container">
           {!user && (
             <Link to="/login" className="mobile-login-btn">

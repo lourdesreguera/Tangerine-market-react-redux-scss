@@ -24,7 +24,7 @@ const NewStoreForm = () => {
   };
 
   const addStore = () => {
-    alert('Producto añadido')
+    alert('Comercio añadido')
   }
 
   return (

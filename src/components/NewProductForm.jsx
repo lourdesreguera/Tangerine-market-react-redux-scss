@@ -1,50 +1,39 @@
-import React from 'react';
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { registerNewProduct } from '../redux/products/products.actions';
-
-const INITIAL_STATE = {
-    name: '',
-    description: '',
-    quantity: 0,
-    price: 0,
-    photo: '',
-};
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { registerNewProduct } from "../redux/products/products.actions";
+import { useForm } from "react-hook-form";
 
 const NewProductForm = () => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const { error } = useSelector(state => state.auth);
-    const { store } = useSelector(state => state.store)
-    const [form, setForm] = useState(INITIAL_STATE);
+  const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { error } = useSelector((state) => state.auth);
+  const { store } = useSelector((state) => state.store);
 
-    const submit = (ev) => {
-        ev.preventDefault();
-        dispatch(registerNewProduct(form, store, navigate));
-    };
+  const submit = (data) => {
+    const formData = new FormData();
+    formData.append("photo", data.photo[0]);
+    formData.append("name", data.name);
+    formData.append("description", data.description);
+    formData.append("quantity", data.quantity);
+    formData.append("price", data.price);
 
-    const changeInput = (ev) => {
-        const { name, value } = ev.target;
+    dispatch(registerNewProduct(formData, store, navigate));
+  };
 
-        if (value) ev.target.setCustomValidity("");
-
-        setForm({
-            ...form,
-            [name]: value,
-        })
-    };
+  const addProduct = () => {
+    alert('Producto añadido')
+  }
 
   return (
     <div className="formPage__container formPage__container--newStore">
       <h1 className="my-account__subheading">Añade nuevo producto</h1>
-      <form onSubmit={submit} className="formPage__form">
+      <form onSubmit={handleSubmit(submit)} className="formPage__form" encType="multipart/form-data">
         <label className="formPage__label">
           <input
             type="text"
-            name="name"
-            value={form.name}
-            onChange={changeInput}
+            {...register("name")}
             required
             placeholder="Nombre"
             className="formPage__input"
@@ -52,9 +41,7 @@ const NewProductForm = () => {
         </label>
         <label className="formPage__label">
           <textarea
-            name="description"
-            value={form.description}
-            onChange={changeInput}
+            {...register("description")}
             required
             placeholder="Descripción"
             className="formPage__input"
@@ -63,9 +50,7 @@ const NewProductForm = () => {
         <label className="formPage__label">
           <input
             type="number"
-            name="quantity"
-            value={form.quantity}
-            onChange={changeInput}
+            {...register("quantity")}
             required
             placeholder="Cantidad"
             className="formPage__input"
@@ -74,9 +59,7 @@ const NewProductForm = () => {
         <label className="formPage__label">
           <input
             type="number"
-            name="price"
-            value={form.price}
-            onChange={changeInput}
+            {...register("price")}
             required
             placeholder="Precio"
             className="formPage__input"
@@ -84,21 +67,19 @@ const NewProductForm = () => {
         </label>
         <label className="formPage__label">
           <input
-            type="text"
-            name="photo"
-            value={form.photo}
-            onChange={changeInput}
+            type="file"
+            {...register("photo")}
             placeholder="photo"
             className="formPage__input"
           />
         </label>
-        <button type="submit" className="login-btn login-btn--form">
+        <button type="submit" className="login-btn login-btn--form" onClick={addProduct}>
           Añadir producto
         </button>
       </form>
       {error && <h2 className="error">{error}</h2>}
     </div>
-  )
-}
+  );
+};
 
-export default NewProductForm
+export default NewProductForm;

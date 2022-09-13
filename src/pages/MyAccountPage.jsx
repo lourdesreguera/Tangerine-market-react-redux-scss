@@ -1,16 +1,31 @@
 import React from "react";
 import NewStoreForm from "../components/NewStoreForm";
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import NewProductForm from "../components/NewProductForm";
 import { getStore } from "../redux/store/store.actions";
+import { ShoppingCartContext } from "../context/ShoppingCartContext";
 
 const MyAccountPage = () => {
   const { user } = useSelector((state) => state.auth);
   const { store } = useSelector((state) => state.store);
+  const { stores } = useSelector((state) => state.stores);
   const [newStore, setnewStore] = useState(false);
   const [newProduct, setNewProduct] = useState(false);
   const dispatch = useDispatch();
+
+  const contexto = useContext(ShoppingCartContext);
+  const tiendas = [];
+
+  // if (contexto.shoppingCart) {
+  //   for (let i = 0; i < contexto.shoppingCart.length; i++) {
+  //     const filtro = stores.find((store) =>
+  //       store.products.includes(contexto.shoppingCart[i].id)
+  //     );
+  //     tiendas.push(filtro.owner);
+  //   }
+  // }
+  // console.log(tiendas);
 
   useEffect(() => {
     if (user.store) {
@@ -43,22 +58,36 @@ const MyAccountPage = () => {
             </li>
           </ul>
 
-          {store && store.products && (
-          <div>
-            <h2>Tus productos:</h2>
+          {/* {contexto.shoppingCart && tiendas.includes(user._id) && (
             <div>
-              {store.products.map((product) => {
+              <h1>Has vendido:</h1>
+              {contexto.shoppingCart.map((item) => {
                 return (
-                  <div key={product._id}>
-                    <p>Nombre:{product.name}</p>
-                    <p>Precio: {product.price}€</p>
-                    <p>Cantidad: {product.quantity}</p>
+                  <div>
+                    <h1>{item.name}</h1>
+                    <p>{item.quantity}</p>
                   </div>
                 );
               })}
             </div>
-          </div>
-        )}
+          )} */}
+
+          {store && store.products && (
+            <div>
+              <h2>Tus productos:</h2>
+              <div>
+                {store.products.map((product) => {
+                  return (
+                    <div key={product._id}>
+                      <p>Nombre:{product.name}</p>
+                      <p>Precio: {product.price}€</p>
+                      <p>Cantidad: {product.quantity}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
 
         {!user.store && (
@@ -88,10 +117,6 @@ const MyAccountPage = () => {
             {newProduct && <NewProductForm />}
           </div>
         )}
-
-        
-
-        
       </div>
     </main>
   );

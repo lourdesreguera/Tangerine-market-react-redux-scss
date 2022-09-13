@@ -38,6 +38,10 @@
         width: auto;
         padding: 5px 10px;
     }
+    &--chart {
+        width: 200px;
+        margin-top: 20px;
+    }
 }
 
 .btn-quantity {
@@ -49,4 +53,8 @@
     margin: 5px 0 5px 20px;
     font-size: var(--heading-desk-font);
     font-size: 20px;
+    background-color: var(--white);
+    &--delete {
+        margin-right: 30px;
+    }
 }

@@ -32,4 +32,18 @@
     &--span {
         font-family: var(--placeholder);
     }
+    &--cart {
+        font-size: 16px;
+    }
+}
+
+.shopping-cart__resume {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+
+.shopping-cart__total {
+    margin: 5px 0;
 }

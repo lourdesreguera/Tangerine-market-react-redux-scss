@@ -8,8 +8,8 @@ const StoresCategories = ({ stores }) => {
         stores.map((store) => {
           return (
             <div key={store._id} className="stores__container">
-              <div>
-                <img src={store.image} alt={store.name} />
+              <div className="stores__container-image">
+                <img className="stores-image" src={store.photo} alt={store.name} />
               </div>
               <div>
                 <Link to={`/stores/${store._id}`} className="stores__data stores__data--heading">

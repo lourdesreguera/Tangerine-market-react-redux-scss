@@ -16,21 +16,25 @@
   @media (max-width: 750px) {
     width: 100px;
   }
+
   &--form {
     width: 100%;
     margin: 20px 0;
     height: 40px;
   }
+
   &--my-account {
     width: 100%;
     padding: 10px;
     margin: 20px 0;
     line-height: 160%;
+
     @media (min-width: 600px) {
       width: 400px;
       height: 60px;
       padding: 10px 100px;
     }
+
     &--products {
         font-family: var(--heading-stores);
         font-size: 14px;
@@ -41,7 +45,7 @@
       background-color: var(--white);
       color: var(--purple);
     }
-  }
+    }
   &--chart {
     width: 200px;
     margin-top: 20px;
@@ -61,7 +65,7 @@
   &--delete {
     margin-right: 30px;
   }
-}
+}}
 
 .btn-homepage {
   background-color: var(--btn-hero);

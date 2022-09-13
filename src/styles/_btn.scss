@@ -12,6 +12,7 @@
     text-decoration: none;
     text-align: center;
     cursor: pointer;
+
     @media (max-width: 750px) {
         width: 100px;
     }
@@ -37,6 +38,10 @@
         text-transform: uppercase;
         width: auto;
         padding: 5px 10px;
+        &:focus{
+            background-color: var(--white);
+            color: var(--purple);
+         }
     }
     &--chart {
         width: 200px;

@@ -58,6 +58,9 @@ const shoppingCartReducer = (state = INITIAL_STATE, action) => {
             return product.id !== state.shoppingCart[payload].id
         })}
     }
+    case actions.DELETE_CHART: {
+      return {...state, numberProducts: 0, shoppingCart: []}
+    }
     default:
       return state;
   }

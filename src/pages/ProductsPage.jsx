@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getProducts } from "../redux/products/products.actions";
+import { addShoppingCart } from "../redux/shopping-cart/shopping-cart.actions";
 
 const ProductsPage = () => {
   const dispatch = useDispatch();
@@ -44,7 +45,7 @@ const ProductsPage = () => {
                   </NavLink>
                 </div>
               </div>
-              <button type="submit" className="login-btn login-btn--products">Añadir al Carrito</button>
+              <button className="login-btn login-btn--products" onClick={() => dispatch(addShoppingCart(product))}>Añadir al Carrito</button>
             </div>
           );
         })}

@@ -2,14 +2,20 @@
     display: flex;
     flex-direction: column;
     max-width: 1000px;
-    margin: 150px auto;
+    margin: 150px auto 100px auto;
     min-height: 300px;
+    padding: 0 40px;
+    
+}
+
+.shopping-cart__title {
+margin-bottom: 40px;
 }
 
 .shopping-cart__container {
     display: flex;
     align-items: center;
-    background-color: var(--login-btn-border);
+    background-color: var(--chart);
     margin: 10px 0;
     justify-content: space-around;
     &--item {
@@ -17,10 +23,18 @@
     }
     &--image {
         max-width: 100px;
+        padding: 0 10px;
     }
     &--price {
         flex-direction: column;
     }
+    &--mobile {
+        flex-direction: column;
+    }
+}
+
+.shopping-cart__p {
+    margin: 0;
 }
 
 .shopping-cart__image {

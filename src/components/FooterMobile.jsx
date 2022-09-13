@@ -1,37 +1,90 @@
 import React from "react";
+import { useState } from "react";
 
 const FooterMobile = () => {
+  const [view1, setView1] = useState(false);
+  const [view2, setView2] = useState(false);
+  const [view3, setView3] = useState(false);
+
+  const viewMore1 = () => {
+    setView1(!view1);
+  };
+
+  const viewMore2 = () => {
+    setView2(!view2);
+  };
+
+  const viewMore3 = () => {
+    setView3(!view3);
+  };
+
   return (
     <div className="footer-mobile">
       <div className="footer-container-mobile">
         <div className="footer-container-mobile__item">
           <div className="footer-mobile-enlaces">
             <div className="footer-mobile-enlaces__item">
-              <p>TANGERINE MARKET</p>
+              <div>
+                <p>TANGERINE MARKET</p>
+              </div>
+              <div className="footer-mobile-enlaces__item">
+                <img
+                  src="./images/expand-more-black-24dp.png"
+                  alt=""
+                  onClick={viewMore1}
+                />
+              </div>
             </div>
-            <div className="footer-mobile-enlaces__item">
-              <img src="./images/expand-more-black-24dp.png" alt="" />
-            </div>
+            {view1 && (
+              <div>
+                <p>Enlace 1</p>
+                <p>Enlace2</p>
+              </div>
+            )}
           </div>
         </div>
         <div className="footer-container-mobile__item">
           <div className="footer-mobile-enlaces">
             <div className="footer-mobile-enlaces__item">
-              <p>SECCIONES</p>
+              <div>
+                <p>SECCIONES</p>
+              </div>
+              <div className="footer-mobile-enlaces">
+                <img
+                  src="./images/expand-more-black-24dp.png"
+                  alt=""
+                  onClick={viewMore2}
+                />
+              </div>
             </div>
-            <div className="footer-mobile-enlaces">
-              <img src="./images/expand-more-black-24dp.png" alt="" />
-            </div>
+            {view2 && (
+              <div>
+                <p>Enlace 1</p>
+                <p>Enlace2</p>
+              </div>
+            )}
           </div>
         </div>
         <div className="footer-container-mobile__item">
           <div className="footer-mobile-enlaces">
             <div className="footer-mobile-enlaces__item">
-              <p>CONTACTO</p>
+              <div>
+                <p>CONTACTO</p>
+              </div>
+              <div className="footer-mobile-enlaces">
+                <img
+                  src="./images/expand-more-black-24dp.png"
+                  alt=""
+                  onClick={viewMore3}
+                />
+              </div>
             </div>
-            <div className="footer-mobile-enlaces">
-              <img src="./images/expand-more-black-24dp.png" alt="" />
-            </div>
+            {view3 && (
+              <div>
+                <p>Enlace 1</p>
+                <p>Enlace2</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

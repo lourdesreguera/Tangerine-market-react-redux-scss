@@ -55,3 +55,12 @@
     font-weight: bold;
   }
 }
+
+.homepage-link {
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--heading-desk-font);
+  text-align: center;
+  color: var(--black);
+  font-size: 14px;
+}

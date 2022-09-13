@@ -33,6 +33,9 @@
     &--span {
         font-family: var(--placeholder);
     }
+    &--cart {
+        font-size: 16px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -45,7 +48,17 @@
     }
     .store-detail__product {
         margin-top:30px;
-        padding: 8px;
-        
-     }
+        padding: 8px;  
+     }  
+}
+
+.shopping-cart__resume {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+
+.shopping-cart__total {
+    margin: 5px 0;
 }

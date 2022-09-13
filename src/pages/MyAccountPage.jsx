@@ -1,13 +1,12 @@
 import React from "react";
 import NewStoreForm from "../components/NewStoreForm";
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import NewProductForm from "../components/NewProductForm";
 import { getStore } from "../redux/store/store.actions";
 
 const MyAccountPage = () => {
   const { user } = useSelector((state) => state.auth);
-  const { store } = useSelector((state) => state.store);
   const [newStore, setnewStore] = useState(false);
   const [newProduct, setNewProduct] = useState(false);
   const dispatch = useDispatch();
@@ -42,23 +41,6 @@ const MyAccountPage = () => {
               <p className="my-account__text">{user.email}</p>
             </li>
           </ul>
-
-          {store && store.products && (
-          <div>
-            <h2>Tus productos:</h2>
-            <div>
-              {store.products.map((product) => {
-                return (
-                  <div key={product._id}>
-                    <p>Nombre:{product.name}</p>
-                    <p>Precio: {product.price}€</p>
-                    <p>Cantidad: {product.quantity}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
         </div>
 
         {!user.store && (
@@ -88,10 +70,6 @@ const MyAccountPage = () => {
             {newProduct && <NewProductForm />}
           </div>
         )}
-
-        
-
-        
       </div>
     </main>
   );

@@ -23,13 +23,17 @@ const NewProductForm = () => {
   };
 
   const addProduct = () => {
-    alert('Producto añadido')
-  }
+    alert("Producto añadido");
+  };
 
   return (
     <div className="formPage__container formPage__container--newStore">
       <h1 className="my-account__subheading">Añade nuevo producto</h1>
-      <form onSubmit={handleSubmit(submit)} className="formPage__form" encType="multipart/form-data">
+      <form
+        onSubmit={handleSubmit(submit)}
+        className="formPage__form"
+        encType="multipart/form-data"
+      >
         <label className="formPage__label">
           <input
             type="text"
@@ -73,7 +77,11 @@ const NewProductForm = () => {
             className="formPage__input"
           />
         </label>
-        <button type="submit" className="login-btn login-btn--form" onClick={addProduct}>
+        <button
+          type="submit"
+          className="login-btn login-btn--form"
+          onClick={addProduct}
+        >
           Añadir producto
         </button>
       </form>

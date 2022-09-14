@@ -24,8 +24,8 @@ const NewStoreForm = () => {
   };
 
   const addStore = () => {
-    alert('Comercio añadido')
-  }
+    alert("Comercio añadido");
+  };
 
   return (
     <div className="formPage__container formPage__container--newStore">
@@ -100,7 +100,11 @@ const NewStoreForm = () => {
             className="formPage__input"
           />
         </label>
-        <button type="submit" className="login-btn login-btn--form" onClick={addStore}>
+        <button
+          type="submit"
+          className="login-btn login-btn--form"
+          onClick={addStore}
+        >
           Añadir comercio
         </button>
       </form>

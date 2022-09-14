@@ -1,64 +1,77 @@
 .store-detail {
-    display: flex;
-    flex-direction: column;
-    max-width: 1200px;
-    margin: 100px auto 100px auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 100px auto 100px auto;
 }
 
 .store-detail__name {
-    text-align: center;
+  text-align: center;
 }
 
 .store-detail__products {
-    display: flex;
-    flex-wrap: wrap;
-    margin:50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0;
 }
 
 .store-detail__product {
-   width: 20%;
-   padding: 8px;
-   box-sizing: border-box;
+  width: 20%;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
 .store-detail__image {
-    width: 100%;
+  width: 100%;
 }
 
 .store-detail__text {
-    font-family: var(--heading-stores);
-    font-size: 18px;
-    text-transform: capitalize;
-    margin: 0;
-    &--span {
-        font-family: var(--placeholder);
-    }
-    &--cart {
-        font-size: 16px;
-    }
+  font-family: var(--heading-stores);
+  font-size: 18px;
+  text-transform: capitalize;
+  margin: 0;
+  &--span {
+    font-family: var(--placeholder);
+  }
+  &--cart {
+    font-size: 16px;
+  }
+}
+
+.contact-container{
+  border: 2px solid #7c1044;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #7c104433;
+  &__title{
+    color:#7c1044;
+    font-weight: bold;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-
-    .store-detail__product {
-        width: 100%;
-    }
-    .store-detail__products {
-        margin:20px;
-    }
-    .store-detail__product {
-        margin-top:30px;
-        padding: 8px;  
-     }  
+  .store-detail__product {
+    width: 100%;
+  }
+  .store-detail__products {
+    margin: 20px;
+  }
+  .store-detail__product {
+    margin-top: 30px;
+    padding: 8px;
+  }
+  .contact-container{
+    margin: 20px;
+  }
 }
 
 .shopping-cart__resume {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20px;
 }
 
 .shopping-cart__total {
-    margin: 5px 0;
+  margin: 5px 0;
 }

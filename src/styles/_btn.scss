@@ -36,36 +36,37 @@
     }
 
     &--products {
-        font-family: var(--heading-stores);
-        font-size: 14px;
-        text-transform: uppercase;
-        width: auto;
-        padding: 5px 10px;
-    &:focus {
-      background-color: var(--white);
-      color: var(--purple);
+      font-family: var(--heading-stores);
+      font-size: 14px;
+      text-transform: uppercase;
+      width: auto;
+      padding: 5px 10px;
+      &:focus {
+        background-color: var(--white);
+        color: var(--purple);
+      }
     }
+    &--chart {
+      width: 200px;
+      margin-top: 20px;
     }
-  &--chart {
-    width: 200px;
-    margin-top: 20px;
+  }
+
+  .btn-quantity {
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 5px 0 5px 20px;
+    font-size: var(--heading-desk-font);
+    font-size: 20px;
+    background-color: var(--white);
+    &--delete {
+      margin-right: 30px;
+    }
   }
 }
-
-.btn-quantity {
-  border: none;
-  cursor: pointer;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  margin: 5px 0 5px 20px;
-  font-size: var(--heading-desk-font);
-  font-size: 20px;
-  background-color: var(--white);
-  &--delete {
-    margin-right: 30px;
-  }
-}}
 
 .btn-homepage {
   background-color: var(--btn-hero);

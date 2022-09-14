@@ -27,28 +27,27 @@
   max-width: 1200px;
 }
 .home-page__gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 0 50px 0;
-    
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 50px 0;
 }
 
 .home-page__card {
-    justify-content: center;
-    margin-top: 50px;
-    width: 25%;
-    box-sizing: border-box;
-    padding: 0 20px;
-    @media (max-width: 600px) {
-      width: 50%;
-    }
+  justify-content: center;
+  margin-top: 50px;
+  width: 25%;
+  box-sizing: border-box;
+  padding: 0 20px;
+  @media (max-width: 600px) {
+    width: 50%;
+  }
 }
 
 .home-page__imgStore {
-    img {
-        width: 100%;
-    }
+  img {
+    width: 100%;
+  }
 }
 
 .home-page__heading {

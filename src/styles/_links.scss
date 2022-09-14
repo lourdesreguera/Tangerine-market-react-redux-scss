@@ -16,7 +16,7 @@
     transition: color 0.25s ease-in-out;
     &:hover {
       color: var(--purple);
-  }
+    }
   }
   &--categories {
     font-family: var(--nav-desk-font);
@@ -24,8 +24,12 @@
     margin-right: 30px;
     cursor: pointer;
     transition: all 0.25s ease-in-out;
+    @media (max-width: 750px) {
+      margin-right: 10px;
+    }
     &:hover {
       color: var(--purple);
+      font-weight: bold;
     }
   }
 }
@@ -51,7 +55,7 @@
   &--phone {
     font-size: 14px;
   }
-  &--footer{
+  &--footer {
     font-weight: bold;
   }
 }

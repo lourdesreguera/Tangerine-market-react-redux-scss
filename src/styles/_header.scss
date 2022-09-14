@@ -1,70 +1,72 @@
-@import '_fonts';
-@import '_links';
-@import '_btn';
-@import '_icons';
-@import '_colors';
+@import "_fonts";
+@import "_links";
+@import "_btn";
+@import "_icons";
+@import "_colors";
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--white);
-    &--desk {
-        left: 50%;
-        transform: translateX(-50%);
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  &--desk {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .header__content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px 0 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 10px;
 }
 
 .header__container {
-    display: flex;
-    align-items: center;
-    &--icons {
-        margin: 0 20px;
-        img {
-            margin: 0 5px;
-        }
+  display: flex;
+  align-items: center;
+  &--icons {
+    margin: 0 20px;
+    img {
+      margin: 0 5px;
     }
+  }
 }
 
 .header__nav {
-    display: flex;
-    align-items: center;
-    &-container {
-        width: 130px;
-        text-align: center;
-        @media (max-width: 900px) {
-            width: 90px;
-        }
-        @media (max-width: 750px) {
-            width: 80px;
-        }
+  display: flex;
+  align-items: center;
+  &-container {
+    width: auto;
+    margin-right: 30px;
+    text-align: center;
+    @media (max-width: 900px) {
+      width: 90px;
     }
+    @media (max-width: 750px) {
+      width: 80px;
+    }
+  }
 }
 
 .header__logo {
-    width: 200px;
+  width: 200px;
 }
 
 .mobile-login-btn {
-    font-family: var(--heading-mobile-font);
-    font-size: 10px;
-    color: var(--purple);
-    background-color: transparent;
-    border: none;
-    margin-right: 10px;
-    text-decoration: none;
+  font-family: var(--heading-mobile-font);
+  font-size: 10px;
+  color: var(--purple);
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+  text-decoration: none;
 }
 
 .active {
-    color: var(--purple);
+  color: var(--purple);
+  font-weight: bold;
 }

@@ -32,7 +32,7 @@ const NavbarMobile = () => {
         <div className="NavbarMobile-image">
           <img src="./images/shopping-cart-black-mobile.png" alt="" />
         </div>
-        <Link to="/" className="NavbarMobile-link">
+        <Link to="/shopping-cart" className="NavbarMobile-link">
           <h4 className="NavbarMobile-text">CARRITO</h4>
         </Link>
       </div>

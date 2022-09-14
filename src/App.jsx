@@ -17,18 +17,17 @@ import ShoppingCartPage from "./pages/ShoppingCartPage";
 import FooterMobile from "./components/FooterMobile";
 import OrderConfirmation from "./pages/OrderConfirmation";
 import { useEffect } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { checkUser } from "./redux/auth/aut.actions";
 import HomePage from "./pages/HomePage";
 import NavbarMobile from "./components/NavbarMobile";
-
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(checkUser())
-  }, [dispatch]); 
+    dispatch(checkUser());
+  }, [dispatch]);
 
   return (
     <div className="app">

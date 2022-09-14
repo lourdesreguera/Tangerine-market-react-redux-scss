@@ -53,13 +53,17 @@ const shoppingCartReducer = (state = INITIAL_STATE, action) => {
       return { ...state };
     }
     case actions.DELETE_PRODUCT: {
-        const quantity = state.shoppingCart[payload].quantity;
-        return { ...state, numberProducts: state.numberProducts - quantity, shoppingCart: state.shoppingCart.filter(product => {
-            return product.id !== state.shoppingCart[payload].id
-        })}
+      const quantity = state.shoppingCart[payload].quantity;
+      return {
+        ...state,
+        numberProducts: state.numberProducts - quantity,
+        shoppingCart: state.shoppingCart.filter((product) => {
+          return product.id !== state.shoppingCart[payload].id;
+        }),
+      };
     }
     case actions.DELETE_CHART: {
-      return {...state, numberProducts: 0, shoppingCart: []}
+      return { ...state, numberProducts: 0, shoppingCart: [] };
     }
     default:
       return state;

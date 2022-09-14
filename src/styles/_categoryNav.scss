@@ -1,15 +1,22 @@
 .categoryNav {
-    position: fixed;
-    width: 100%;
-    margin-top: 90px;
-    background-color: var(--nav-desk);
+  position: fixed;
+  width: 100%;
+  margin-top: 90px;
+  background-color: var(--nav-desk);
 }
 
 .categoryNav__container {
-    max-width: 1150px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px 40px;
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .categoryNav__container {
+    padding: 3px;
+    justify-content: center;
+  }
 }

@@ -26,7 +26,7 @@ const HeaderDesk = () => {
                 className="header__nav-link header__nav-link--hover-header"
                 activeclassname="active"
               >
-                shop
+                Comercios
               </NavLink>
             </div>
             <div className="header__nav-container">
@@ -35,7 +35,7 @@ const HeaderDesk = () => {
                 className="header__nav-link header__nav-link--hover-header"
                 activeclassname="active"
               >
-                products
+                Productos
               </NavLink>
             </div>
             <div className="header__nav-container">
@@ -44,7 +44,7 @@ const HeaderDesk = () => {
                 className="header__nav-link header__nav-link--hover-header"
                 activeclassname="active"
               >
-                about
+                Sobre Nosotros
               </NavLink>
             </div>
           </nav>

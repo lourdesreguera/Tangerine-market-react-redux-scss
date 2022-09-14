@@ -12,16 +12,17 @@ const OrderConfirmation = () => {
       <div>
         <h2>Estos son tus productos adquiridos:</h2>
         <div>
-          {shoppingCart && shoppingCart.map(product => {
-            return (
-              <div key={product._id}>
-                <img src={product.photo} alt={product.name} />
-                <p>{product.name}</p>
-                <p>Cantidad: {product.quantity}</p>
-                <p>Precio total: {product.quantity * product.price}€</p>
-              </div>
-            )
-          })}
+          {shoppingCart &&
+            shoppingCart.map((product) => {
+              return (
+                <div key={product._id}>
+                  <img src={product.photo} alt={product.name} />
+                  <p>{product.name}</p>
+                  <p>Cantidad: {product.quantity}</p>
+                  <p>Precio total: {product.quantity * product.price}€</p>
+                </div>
+              );
+            })}
         </div>
       </div>
     </main>

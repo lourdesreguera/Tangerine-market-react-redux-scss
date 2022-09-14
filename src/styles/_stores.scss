@@ -1,26 +1,38 @@
 .stores {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-    min-height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 200px;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
 }
 
 .stores__container {
-    width: 20%;
-    margin:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 20%;
+  margin: 10px;
 }
-.stores__container-image{
-    width:200px;
-    height: 200px;
-    margin:15px;
+.stores__container-image {
+  width: 200px;
+  height: 200px;
+  margin: 15px;
 }
-.stores-image{
-    width: 100%;
+.stores-image {
+  width: 100%;
 }
 
 .stores__address {
-    margin: 2px 0;
+  margin: 2px 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .stores__container {
+    width: 100%;
+    margin: 10px;
+  }
 }

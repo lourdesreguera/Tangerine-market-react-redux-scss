@@ -5,7 +5,7 @@ const INITIAL_STATE = {
   user: null,
   isLoading: false,
   error: null,
-  commerces: []
+  commerces: [],
 };
 
 const authReducer = (state = INITIAL_STATE, action) => {
@@ -26,7 +26,13 @@ const authReducer = (state = INITIAL_STATE, action) => {
       return { ...state, isLoading: true, error: null };
     }
     case actions.LOGOUT_OK: {
-      return { ...state, user: false, isLoading: false, error: null, commerces: [] };
+      return {
+        ...state,
+        user: false,
+        isLoading: false,
+        error: null,
+        commerces: [],
+      };
     }
     case actions.LOGOUT_ERROR: {
       return { ...state, user: false, isLoading: false, error: payload };
@@ -51,7 +57,6 @@ const authReducer = (state = INITIAL_STATE, action) => {
     case actions.REGISTER_USER_ERROR: {
       return { ...state, error: payload, isLoading: false, user: false };
     }
-
     case actions.REGISTER_COMMERCE_START: {
       return { ...state, isLoading: true, error: null };
     }

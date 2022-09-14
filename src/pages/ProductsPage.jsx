@@ -42,7 +42,12 @@ const ProductsPage = () => {
                   <p>Ir a vendedor</p>
                 </NavLink>
               </div>
-              <button className="login-btn login-btn--products" onClick={() => dispatch(addShoppingCart(product))}>Añadir al Carrito</button>
+              <button
+                className="login-btn login-btn--products"
+                onClick={() => dispatch(addShoppingCart(product))}
+              >
+                Añadir al Carrito
+              </button>
             </div>
           );
         })}

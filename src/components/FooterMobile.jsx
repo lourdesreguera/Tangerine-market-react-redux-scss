@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const FooterMobile = () => {
   const [view1, setView1] = useState(false);
@@ -37,8 +38,15 @@ const FooterMobile = () => {
             </div>
             {view1 && (
               <div>
-                <p>Enlace 1</p>
-                <p>Enlace2</p>
+                <Link to="/about" className="stores__data stores__data--footer">
+                  <p>Sobre Nosotros</p>
+                </Link>
+                <Link
+                  to="/conditions"
+                  className="stores__data stores__data--footer"
+                >
+                  <p>Términos y Condiciones</p>
+                </Link>
               </div>
             )}
           </div>
@@ -47,7 +55,7 @@ const FooterMobile = () => {
           <div className="footer-mobile-enlaces">
             <div className="footer-mobile-enlaces__item">
               <div>
-                <p>SECCIONES</p>
+                <p>COMERCIOS DESTACADOS</p>
               </div>
               <div className="footer-mobile-enlaces">
                 <img
@@ -59,8 +67,30 @@ const FooterMobile = () => {
             </div>
             {view2 && (
               <div>
-                <p>Enlace 1</p>
-                <p>Enlace2</p>
+                <Link
+                  to="/stores/631c54b2bd07775b6fa99483"
+                  className="stores__data stores__data--footer"
+                >
+                  <p>Floristería Capullos Florecidos</p>
+                </Link>
+                <Link
+                  to="/stores/63208f2ec2f0e99b62a4fc88"
+                  className="stores__data stores__data--footer"
+                >
+                  <p>Barbería Jonson's</p>
+                </Link>
+                <Link
+                  to="/stores/631f33c83685a487612e019f"
+                  className="stores__data stores__data--footer"
+                >
+                  <p>Pescadería Paula</p>
+                </Link>
+                <Link
+                  to="/stores/631ee61a325a01f32a480065"
+                  className="stores__data stores__data--footer"
+                >
+                  <p>Listo de Papeles</p>
+                </Link>
               </div>
             )}
           </div>
@@ -81,8 +111,8 @@ const FooterMobile = () => {
             </div>
             {view3 && (
               <div>
-                <p>Enlace 1</p>
-                <p>Enlace2</p>
+                <p className="stores__data stores__data--footer">Upgrade Hub</p>
+                <p className="stores__data stores__data--footer">987 654 321</p>
               </div>
             )}
           </div>

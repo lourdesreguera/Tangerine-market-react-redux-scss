@@ -46,7 +46,8 @@ const StoreDetailPage = () => {
                 );
               })}
             </div>
-            <div>
+            <div className="contact-container">
+              <h2 className="contact-container__title">Datos de contacto</h2>
               <p className="store-detail__text">
                 Dirección:{" "}
                 <span className="store-detail__text store-detail__text--span">

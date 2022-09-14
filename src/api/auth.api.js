@@ -14,7 +14,6 @@ export const login = async (user) => {
   }
 };
 
-
 export const logout = async (user) => {
   try {
     await axios.post(`${BASE_URL}/users/logout`, user, {

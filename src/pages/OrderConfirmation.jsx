@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 const OrderConfirmation = () => {
   const { shoppingCart } = useSelector((state) => state.shoppingCart);
-  // console.log(shoppingCart);
 
   return (
     <main className="orderConfirm">
@@ -11,13 +10,13 @@ const OrderConfirmation = () => {
       <p>Puedes pasar por tienda para formalizar el pago y recoger tu pedido</p>
       <div>
         <h2>Estos son tus productos adquiridos:</h2>
-        <div>
+        <div className="orderConfirm__item">
           {shoppingCart &&
             shoppingCart.map((product) => {
               return (
                 <div key={product._id}>
-                  <img src={product.photo} alt={product.name} />
-                  <p>{product.name}</p>
+                  <img src={product.photo} alt={product.name} className="orderConfirm__image"/>
+                  <p className="store-detail__text">{product.name}</p>
                   <p>Cantidad: {product.quantity}</p>
                   <p>Precio total: {product.quantity * product.price}€</p>
                 </div>

@@ -99,7 +99,7 @@ export const registerUser = (user, navigate) => async dispatch => {
         
         const { password, ...restUser} = user;
         const newUser = {...restUser, store: response._id}
-        await axios.put(`http://localhost:4000/users/edit/${user._id}`, newUser, {withCredentials: true});
+        await axios.put(`https://tangerine-market.herokuapp.com/users/edit/${user._id}`, newUser, {withCredentials: true});
         console.log(newUser)
         navigate('/my-account');
       } else {

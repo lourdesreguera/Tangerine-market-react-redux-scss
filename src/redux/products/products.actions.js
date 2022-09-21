@@ -13,7 +13,7 @@ export const REGISTER_PRODUCT_ERROR = "REGISTER_PRODUCT_ERROR";
 export const getProducts = () => async (dispatch) => {
   dispatch({ type: GETTING_PRODUCTS });
   try {
-    const res = await axios.get("http://localhost:4000/products/");
+    const res = await axios.get("https://tangerine-market.herokuapp.com/products/");
     await dispatch({ type: GET_PRODUCTS, payload: res.data });
   } catch (error) {
     dispatch({ type: ERROR_PRODUCTS, payload: error.message });
@@ -32,14 +32,14 @@ export const registerNewProduct =
 
         const newStore = { ...store, products: [...store.products, res._id] };
         await axios.put(
-          `http://localhost:4000/stores/edit/${store._id}`,
+          `https://tangerine-market.herokuapp.com/stores/edit/${store._id}`,
           newStore,
           { withCredentials: true }
         );
 
         const newProduct = { ...product, store: store };
         await axios.put(
-          `http://localhost:4000/products/edit/${res._id}`,
+          `https://tangerine-market.herokuapp.com/products/edit/${res._id}`,
           newProduct,
           { withCredentials: true }
         );

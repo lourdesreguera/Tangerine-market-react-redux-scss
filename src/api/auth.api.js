@@ -1,7 +1,7 @@
 import axios from "axios";
 axios.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
 
-const BASE_URL = "https://tangerine-market.herokuapp.com/";
+const BASE_URL = "https://tangerine-market.herokuapp.com";
 
 export const login = async (user) => {
   try {
